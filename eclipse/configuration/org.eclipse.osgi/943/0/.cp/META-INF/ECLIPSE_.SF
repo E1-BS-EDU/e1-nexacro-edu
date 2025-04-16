@@ -1,0 +1,106 @@
+Signature-Version: 1.0
+Created-By: 11.0.24 (Eclipse Adoptium)
+SHA-256-Digest-Manifest: wdbCVOxwsjSDfrhByoShnzSHXuTLLUWpMQm+Az4NYBg=
+SHA-256-Digest-Manifest-Main-Attributes: quwQz3fzcbm+Va7ICmaCP6DjJhM+EI1
+ 9OK8XAkA3umI=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/debugger/Variable.class
+SHA-256-Digest: cUhdbjMRJ5cwyRnB36EogWOmr7FTfeoiNX9IZviL+fk=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/invoker/internal/CreationException.
+ class
+SHA-256-Digest: nzMsJnRcrDGi22G3eBVkgrsBtpHMiR1Yk/1rqNLigJw=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/invoker/internal/LoggingConfig.clas
+ s
+SHA-256-Digest: DzH/594/hg1HjMK51RRZGauo+7rh+8orl86F21HAblg=
+
+Name: META-INF/maven/org.eclipse.webtools.sourceediting/org.eclipse.wst.
+ xsl.jaxp.debug/pom.properties
+SHA-256-Digest: Wg2hZsv57rgAZlZcFrvEtH7WDJgLyI4KYRFShARqQxQ=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/debugger/AbstractDebugger$1.class
+SHA-256-Digest: 51P1ACmcNiGI0ZJOqO1YFDJoYdAR6dffbvnuDSpfEAU=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/invoker/internal/LogFormatter.class
+SHA-256-Digest: AvNsd8wpVd+oUXTxzSvhZ4T2KOfXGCjSUrZONtjSmGk=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/invoker/Messages.class
+SHA-256-Digest: QTyDYSczmEcd+mCoJaVBiWnsBhDfx55u3ck7ggjMnfs=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/invoker/internal/SystemOutConsoleHa
+ ndler.class
+SHA-256-Digest: II3RnAPDASG+qk1fv46pk0LYT6rsUugJ96hneimrqnk=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/invoker/internal/JAXPSAXProcessorIn
+ voker.class
+SHA-256-Digest: b7o15YMedgC1K1zjxojTiATrrqJsC+RM+bBRjtGamLY=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/invoker/messages.properties
+SHA-256-Digest: RqhlLac/GW3T4SDoOs1ZP/d6nt1v2izgCcjKGX365s8=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/debugger/DebugConstants.class
+SHA-256-Digest: rQPIdTsnV7eKEFCx2aTIcbSS/DM3A52q+IjirYp+cAs=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/invoker/internal/messages.propertie
+ s
+SHA-256-Digest: E97hdcnd3Ft8PGpRCyWsvFivOh7wvU7fQmlQJxipqm0=
+
+Name: plugin.properties
+SHA-256-Digest: U7SJIrPrcZTLd0CEuLp4Ai0jbFf6vr+NEdoDuZGtdW4=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/invoker/TypedValue.class
+SHA-256-Digest: ZTE4eEW0rwlRMOQw66qdxyGlSz3tcOMqej6oIah+bqY=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/debugger/BreakPoint.class
+SHA-256-Digest: 3HLXO735oZp+ZAb0Jqa3RHWSHrBcX7Awh8Q44aFerIk=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/debugger/DebugRunner$1.class
+SHA-256-Digest: 4mgllky6bLnj9LAcy2O77NDQe8wzxppHouDqh/cLIBQ=
+
+Name: about.html
+SHA-256-Digest: ncO+WCNUIJ0JLCOl/ot53yopwTqvvtVu0qSgblesdYo=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/invoker/internal/Main.class
+SHA-256-Digest: 2gpWwMQRUjURLogG20ePMyoHCUTSAAzw+rpo+r7mL5s=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/debugger/StyleFrame.class
+SHA-256-Digest: Zp/tuYuKb2jJ4/aQtHpF3xa2Om0WsqXHH2j3YqyNY+o=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/debugger/DebugRunner.class
+SHA-256-Digest: fHxayaVDNHBQDRsNv+akIFtUg9rgLADERRw8V+oqJfE=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/invoker/IProcessorInvoker.class
+SHA-256-Digest: uOPUOkCWo+cKrRIwGXWVTZpzD1YOOKzlb/pfxPMmzeI=
+
+Name: META-INF/maven/org.eclipse.webtools.sourceediting/org.eclipse.wst.
+ xsl.jaxp.debug/pom.xml
+SHA-256-Digest: WE/XK7d/5vGSeLBHEoSRvGTpu/N53kY5MggEPfnjxlI=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/invoker/internal/ConfigurationExcep
+ tion.class
+SHA-256-Digest: x0eCaHOVAsKg9U4Wx5+6s/wUAwFbeMnvvDYdlEnIsv4=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/debugger/AbstractDebugger.class
+SHA-256-Digest: xRmV1kUSfREEPRaS/03oOIb3ibLzy2tFrrIPj/t6mLw=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/debugger/IXSLDebugger.class
+SHA-256-Digest: P2F0Xvx14OHG3Jb9jdhc4XdbkNmRaaBJpaHAHFE5RgU=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/invoker/internal/Messages.class
+SHA-256-Digest: O+WubHrJM1lysUGi8HYjmC8s5AWr0/PYk4pn+Zt6QdI=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/invoker/internal/JAXPSAXProcessorIn
+ voker$1.class
+SHA-256-Digest: Py8uONbdqFkYHmZcGmY1ILgKDbtU0aXdU768z/F+ma8=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/invoker/PipelineDefinition.class
+SHA-256-Digest: rMulaVfIBxOiRzN3GVEG8D78ABuDW/uVUYIRfmTJuVY=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/invoker/TransformationException.cla
+ ss
+SHA-256-Digest: o1ZTCaMiQ2xjXSCECp/XXlKTZ9EoB0nggPpfk7byaTI=
+
+Name: org/eclipse/wst/xsl/jaxp/debug/invoker/TransformDefinition.class
+SHA-256-Digest: lQJhy3kzoFi0tsNkCOxOpmaO6mgaXehSiq/pq+JLy1U=
+

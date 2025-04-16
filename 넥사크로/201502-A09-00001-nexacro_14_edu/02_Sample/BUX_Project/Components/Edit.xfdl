@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="comp_Edit" classname="comp_Button" inheritanceid="" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Edit id="Edit00" taborder="1" left="30" top="50" width="150" height="30"/>
+        <Edit id="Edit01" taborder="2" left="30" top="126" width="150" height="30" password="true" value="1234"/>
+        <Edit id="Edit02" taborder="3" left="30" top="205" width="150" height="30" maxlength="4" value="ABCD" autoskip="true"/>
+        <Edit id="Edit03" taborder="4" left="30" top="286" width="150" height="30" autoselect="true" value="ABCD"/>
+        <Edit id="Edit04" taborder="5" left="138" top="368" width="150" height="30" inputtype="number,comma" value="12345" style="align:right middle;"/>
+        <Edit id="Edit05" taborder="6" left="138" top="408" width="150" height="30" inputtype="english" value="abc"/>
+        <Edit id="Edit06" taborder="7" left="138" top="483" width="150" height="30" value="abc" inputfilter="digit"/>
+        <Static id="Static05" taborder="8" text="1) Basic" left="20" top="20" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static00" taborder="9" text="2) Password" left="20" top="100" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static01" taborder="10" text="3) Max Length, AutoSkip" left="20" top="180" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static02" taborder="11" text="4) Auto Select" left="20" top="260" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static03" taborder="12" text="5) Input Type" left="20" top="340" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static04" taborder="13" text="* number,comma" left="28" top="371" width="102" height="20"/>
+        <Static id="Static06" taborder="14" text="* english" left="28" top="412" width="102" height="20"/>
+        <Static id="Static07" taborder="15" text="* digit" left="30" top="486" width="102" height="20"/>
+        <Static id="Static08" taborder="16" text="6) Input Filter" left="20" top="460" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static09" taborder="17" text="7) Inputmode - upper" left="20" top="534" width="150" height="20" style="font:bold 9 arial;"/>
+        <Edit id="Edit07" taborder="18" value="ABC" left="30" top="557" width="150" height="30" inputmode="upper"/>
+        <Edit id="Edit08" taborder="19" imemode="hangul" left="31" top="637" right="867" height="24"/>
+        <Static id="Static10" taborder="20" text="8) IME(Supported only by Internet Explorer.)" left="19" top="612" right="684" height="20" style="font:bold 9 arial;"/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

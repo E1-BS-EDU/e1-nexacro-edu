@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="test2" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Button id="Button00" taborder="0" text="Button00" left="3.13%" top="24" right="82.81%" height="109" onclick="Button00_onclick"/>
+        <Button id="Button01" taborder="1" text="Button01" left="19.73%" top="23" right="66.02%" height="111" onclick="Button01_onclick"/>
+        <Grid id="Grid00" taborder="2" left="3.03%" top="166" right="4.79%" height="186" binddataset="ds_emp" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row band="body" size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell col="0" disptype="normal" text="EMPLOYEE_ID"/>
+                <Cell col="1" disptype="normal" text="FIRST_NAME"/>
+                <Cell col="2" disptype="normal" text="LAST_NAME"/>
+                <Cell col="3" disptype="normal" text="EMAIL"/>
+                <Cell col="4" disptype="normal" text="PHONE"/>
+                <Cell col="5" disptype="normal" text="HIRE_DATE"/>
+                <Cell col="6" disptype="normal" text="MANAGER_ID"/>
+                <Cell col="7" disptype="normal" text="JOB_TITLE"/>
+              </Band>
+              <Band id="body">
+                <Cell col="0" disptype="normal" text="bind:EMPLOYEE_ID"/>
+                <Cell col="1" disptype="normal" text="bind:FIRST_NAME"/>
+                <Cell col="2" disptype="normal" text="bind:LAST_NAME"/>
+                <Cell col="3" disptype="normal" text="bind:EMAIL"/>
+                <Cell col="4" disptype="normal" text="bind:PHONE"/>
+                <Cell col="5" disptype="normal" text="bind:HIRE_DATE"/>
+                <Cell col="6" disptype="normal" text="bind:MANAGER_ID"/>
+                <Cell col="7" disptype="normal" text="bind:JOB_TITLE"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button02" taborder="3" text="allList" left="35.55%" top="46" right="57.32%" height="102" onclick="Button02_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_emp">
+        <ColumnInfo>
+          <Column id="EMPLOYEE_ID" type="STRING" size="256"/>
+          <Column id="FIRST_NAME" type="STRING" size="256"/>
+          <Column id="LAST_NAME" type="STRING" size="256"/>
+          <Column id="EMAIL" type="STRING" size="256"/>
+          <Column id="PHONE" type="STRING" size="256"/>
+          <Column id="HIRE_DATE" type="STRING" size="256"/>
+          <Column id="MANAGER_ID" type="STRING" size="256"/>
+          <Column id="JOB_TITLE" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_cond">
+        <ColumnInfo>
+          <Column id="EMP_ID" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.Button00_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.go("Main::test1.xfdl");
+}
+
+this.Button01_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	alert("@");
+	this.fn_Search();
+}
+
+//데이터 조회 트랜잭션
+this.fn_Search = function ()
+{
+	// 조회조건 셋팅
+	//this.ds_search.setColumn(0, "searchType", this.Combo00.value);
+	this.ds_cond.setColumn(0, "EMP_ID", "2");
+
+	var strSvcId    = "search";
+	var strSvcUrl   = "svc::getEmpById.do";
+	var inData      = "ds_cond=ds_cond"
+	var outData     = "ds_emp=ds_emp";
+	var strArg      = "";
+	var callBackFnc = "fn_Search_Callback";
+	var isAsync   	= true;
+
+	this.transaction(strSvcId , 		// transaction을 구분하기 위한 svc id값
+						strSvcUrl , 	// trabsaction을 요청할 주소
+						inData , 		// 입력값으로 보낼 dataset id , a=b형태로 실제이름과 입력이름을 매칭
+						outData , 		// 처리결과값으로 받을 dataset id, a=b형태로 실제이름과 입력이름을 매칭
+						strArg, 		// 입력값으로 보낼 arguments, a=b
+						callBackFnc, 	// transaction의 결과를 받을 Function 이름
+						isAsync); 		// 비동기통신 여부 [생략가능]
+};
+
+this.fn_Search_Callback = function ()
+{
+	trace("!@#$%^");
+}
+this.Button02_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	alert("보여라");
+	var strSvcId    = "search";
+	var strSvcUrl   = "svc::getEmpList.do";
+	var inData      = ""
+	var outData     = "ds_emp=ds_emp";
+	var strArg      = "";
+	var callBackFnc = "fn_Search_Callback";
+	var isAsync   	= true;
+
+	this.transaction(strSvcId , 		// transaction을 구분하기 위한 svc id값
+						strSvcUrl , 	// trabsaction을 요청할 주소
+						inData , 		// 입력값으로 보낼 dataset id , a=b형태로 실제이름과 입력이름을 매칭
+						outData , 		// 처리결과값으로 받을 dataset id, a=b형태로 실제이름과 입력이름을 매칭
+						strArg, 		// 입력값으로 보낼 arguments, a=b
+						callBackFnc, 	// transaction의 결과를 받을 Function 이름
+						isAsync); 		// 비동기통신 여부 [생략가능]
+}
+]]></Script>
+  </Form>
+</FDL>

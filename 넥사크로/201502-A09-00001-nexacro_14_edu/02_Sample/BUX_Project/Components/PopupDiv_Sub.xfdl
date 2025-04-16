@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="comp_PopupDiv_Sub" classname="comp_Div_Sub" inheritanceid="" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Button id="Button00" taborder="1" text="Menu1" onclick="Button_onclick" left="3" top="2" width="150" height="28"/>
+        <Button id="Button01" taborder="2" text="Menu2" onclick="Button_onclick" left="3" top="34" width="150" height="28"/>
+        <Button id="Button02" taborder="3" text="Menu3" onclick="Button_onclick" left="3" top="66" width="150" height="28"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.Button_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.parent.PopupDiv01.closePopup(obj.text);	
+}
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="comp_ProgressBar" classname="comp_Button" inheritanceid="" left="0" top="0" width="1024" height="768" titletext="New Form" ontimer="comp_ProgressBar_ontimer">
+    <Layouts>
+      <Layout>
+        <ProgressBar id="ProgressBar00" taborder="1" max="100" min="0" left="30" top="50" width="300" height="30" pos="50" style="bartype:normal;barcolor:#fbb03eff;"/>
+        <ProgressBar id="ProgressBar01" taborder="2" max="100" min="0" pos="50" left="30" top="135" width="300" height="30" style="bartype:normal;barcolor:#fbb03eff;direction:backward;"/>
+        <ProgressBar id="ProgressBar02" taborder="3" max="100" min="0" pos="50" left="30" top="216" width="300" height="30" style="bartype:normal;smooth:false;barcolor:#fbb03eff;"/>
+        <Button id="Button00" taborder="5" text="Start" left="336" top="50" width="80" height="30" onclick="Button00_onclick"/>
+        <Static id="Static05" taborder="6" text="1) Basic" left="20" top="20" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static00" taborder="7" text="2) Direction" left="20" top="108" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static01" taborder="8" text="3) Smooth" left="20" top="188" width="150" height="20" style="font:bold 9 arial;"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ProgressBar00.set_pos(0);
+	this.ProgressBar01.set_pos(0);
+	this.ProgressBar02.set_pos(0);
+
+	this.setTimer(0, 50);		
+
+}
+
+
+this.comp_ProgressBar_ontimer = function(obj:Form, e:nexacro.TimerEventInfo)
+{
+	if(e.timerid == 0)
+	{
+		if(this.ProgressBar00.pos == 100)
+		{
+			this.killTimer(0);		
+		}
+		this.ProgressBar00.getNumSetter("pos").postInc();
+		this.ProgressBar01.getNumSetter("pos").postInc();
+		this.ProgressBar02.getNumSetter("pos").postInc();
+			
+	}	
+}
+]]></Script>
+  </Form>
+</FDL>

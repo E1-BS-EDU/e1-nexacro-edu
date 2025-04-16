@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="comp_GroupBox" classname="GroupBox" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <GroupBox id="GroupBox00" text="GroupBox" left="30" top="48" width="250" height="100"/>
+        <Static id="Static05" taborder="1" text="1) Basic" left="20" top="20" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static00" taborder="2" text="2) Align" left="20" top="172" width="150" height="20" style="font:bold 9 arial;"/>
+        <GroupBox id="GroupBox01" text="GroupBox" taborder="3" left="30" top="200" width="250" height="100" titlealign="bottomcenter"/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

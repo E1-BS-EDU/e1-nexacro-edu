@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ADL version="1.2">
+  <TypeDefinition url="default_typedef.xml"/>
+  <GlobalVariables url="globalvars.xml"/>
+  <Application id="testProject" codepage="utf-8" language="Korean" loginformurl="" loginformstyle="" windowopeneffect="" windowcloseeffect="" version="" tracemode="none" themeid="default.xtheme">
+    <Layout>
+      <MainFrame id="mainframe" title="maintitle" defaultfont="" resizable="false" showtitlebar="false" showstatusbar="false" left="0" top="0" width="800" height="800" showtitleicon="false" openstatus="maximize">
+        <FrameSet id="FrameSet0">
+          <Frames>
+            <ChildFrame id="ChildFrame0" formurl="Main::test1.xfdl" showcascadetitletext="true" resizable="false" showtitlebar="false" showtitleicon="false"/>
+          </Frames>
+        </FrameSet>
+      </MainFrame>
+    </Layout>
+    <ScreenInfo/>
+  </Application>
+</ADL>

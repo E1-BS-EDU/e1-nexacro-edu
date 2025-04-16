@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="comp_Dataset" classname="Dataset_Method1" left="0" top="0" width="1024" height="1109" titletext="New Form" onvscroll="comp_Dataset_onvscroll">
+    <Layouts>
+      <Layout>
+        <Button id="Button12" taborder="4" text="copyData" onclick="Button12_onclick" left="185" top="489" width="150" height="30"/>
+        <Button id="Button13" taborder="1" text="appendData" onclick="Button13_onclick" left="30" top="525" width="150" height="30"/>
+        <Button id="Button15" taborder="2" text="clearData" onclick="Button15_onclick" left="30" top="561" width="150" height="30"/>
+        <Button id="Button07" taborder="3" text="deleteAll" onclick="Button07_onclick" left="341" top="417" width="150" height="30"/>
+        <Button id="Button14" taborder="5" text="mergeData" onclick="Button14_onclick" left="185" top="525" width="150" height="30"/>
+        <Static id="Static02" taborder="7" text="1) Basic" left="20" top="20" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static00" taborder="8" text="2) Method" left="20" top="356" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static01" taborder="10" text="3) Calculation" left="20" top="614" width="150" height="20" style="font:bold 9 arial;"/>
+        <Button id="Button17" taborder="11" text="getSum" onclick="Button17_onclick" left="30" top="638" width="150" height="30"/>
+        <Button id="Button18" taborder="12" text="getCaseSum" onclick="Button18_onclick" left="185" top="638" width="150" height="30"/>
+        <Static id="Static04" taborder="13" text="4) Sort" left="20" top="694" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static05" taborder="14" text="5) Filter" left="20" top="774" width="150" height="20" style="font:bold 9 arial;"/>
+        <Button id="Button19" taborder="15" text="Ascending" onclick="Button19_onclick" left="30" top="719" width="150" height="30"/>
+        <Button id="Button20" taborder="16" text="Descending" onclick="Button20_onclick" left="185" top="719" width="150" height="30"/>
+        <Button id="Button21" taborder="17" text="filter" onclick="Button21_onclick" left="30" top="799" width="150" height="30"/>
+        <Button id="Button22" taborder="18" text="release filter" onclick="Button22_onclick" left="185" top="799" width="150" height="30"/>
+        <Button id="Button25" taborder="23" text="findRowExpr" onclick="Button25_onclick" left="341" top="870" width="150" height="30"/>
+        <Button id="Button23" taborder="24" text="findRow" onclick="Button23_onclick" left="30" top="870" width="150" height="30"/>
+        <Static id="Static06" taborder="25" text="6) Find" left="20" top="846" width="150" height="20" style="font:bold 9 arial;"/>
+        <Button id="Button04" taborder="27" text="deleteRow" onclick="Button04_onclick" left="341" top="381" width="150" height="30"/>
+        <Button id="Button09" taborder="28" text="getDeletedColumn" onclick="Button09_onclick" left="185" top="453" width="150" height="30"/>
+        <Button id="Button10" taborder="30" text="reset" onclick="Button10_onclick" left="341" top="453" width="150" height="30"/>
+        <Button id="Button08" taborder="31" text="getOrgColumn" left="30" top="453" width="150" height="30" onclick="Button08_onclick"/>
+        <Static id="Static03" taborder="32" text="2) Create" left="20" top="212" width="150" height="20" style="font:bold 9 arial;"/>
+        <Button id="Button00" taborder="37" text="Create" onclick="Button00_onclick" left="296" top="238" width="102" height="30"/>
+        <Grid id="Grid02" taborder="38" autoenter="select" useinputpanel="false" autofittype="col" left="28" top="238" width="260" height="98">
+          <Formats>
+            <Format id="default"/>
+          </Formats>
+        </Grid>
+        <Button id="Button02" taborder="39" text="addRow" onclick="Button02_onclick" left="30" top="381" width="150" height="30"/>
+        <Button id="Button06" taborder="40" text="setColumn" onclick="Button06_onclick" left="185" top="417" width="150" height="30"/>
+        <Button id="Button05" taborder="41" text="getColumn" onclick="Button05_onclick" left="30" top="417" width="150" height="30"/>
+        <Button id="Button03" taborder="43" text="insertRow" onclick="Button03_onclick" left="185" top="381" width="150" height="30"/>
+        <Button id="Button16" taborder="44" text="clear" onclick="Button16_onclick" left="185" top="561" width="150" height="30"/>
+        <TextArea id="TextArea00" taborder="45" left="497" top="381" width="305" height="210"/>
+        <Button id="Button11" taborder="46" text="copyRow" onclick="Button11_onclick" left="30" top="489" width="150" height="30"/>
+        <Button id="Button24" taborder="47" text="findRowAs" onclick="Button24_onclick" left="185" top="870" width="150" height="30"/>
+        <Button id="Button26" taborder="48" text="saveXML" onclick="Button26_onclick" left="341" top="489" width="150" height="30"/>
+        <Div id="Div00" taborder="49" text="Div00" left="6" top="45" width="802" height="164" style="background:#ffffffff;border:1 solid #808080ff ;">
+          <Layouts>
+            <Layout>
+              <Grid id="Grid00" taborder="0" binddataset="ds" autoenter="select" useinputpanel="false" autofittype="col" left="20" top="4" width="260" height="154">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="40"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell/>
+                      <Cell col="1" text="col1"/>
+                      <Cell col="2" text="col2"/>
+                      <Cell col="3" text="col3"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:dataset.getRowType(currow)"/>
+                      <Cell col="1" edittype="normal" text="bind:col1"/>
+                      <Cell col="2" edittype="normal" text="bind:col2"/>
+                      <Cell col="3" edittype="normal" text="bind:col3"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Grid id="Grid01" taborder="1" binddataset="ds_other" autoenter="select" useinputpanel="false" autofittype="col" left="288" top="4" width="260" height="154">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="40"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24" band="head"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell/>
+                      <Cell col="1" text="col1"/>
+                      <Cell col="2" text="col2"/>
+                      <Cell col="3" text="col3"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="expr:dataset.getRowType(currow)"/>
+                      <Cell col="1" edittype="normal" text="bind:col1"/>
+                      <Cell col="2" edittype="normal" text="bind:col2"/>
+                      <Cell col="3" edittype="normal" text="bind:col3"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset preload="true" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" id="ds">
+        <ColumnInfo>
+          <Column size="256" id="col1" type="INT"/>
+          <Column type="STRING" size="256" id="col2"/>
+          <Column type="STRING" size="256" id="col3"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="col1">10</Col>
+            <Col id="col2">40</Col>
+            <Col id="col3">70</Col>
+          </Row>
+          <Row>
+            <Col id="col1">20</Col>
+            <Col id="col2">50</Col>
+            <Col id="col3">80</Col>
+          </Row>
+          <Row>
+            <Col id="col1">30</Col>
+            <Col id="col2">60</Col>
+            <Col id="col3">90</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_other" preload="true" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true">
+        <ColumnInfo>
+          <Column type="STRING" size="255" id="col1"/>
+          <Column type="STRING" size="255" id="col2"/>
+          <Column type="STRING" size="255" id="col3"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="col1">aa</Col>
+            <Col id="col2">dd</Col>
+            <Col id="col3">gg</Col>
+          </Row>
+          <Row>
+            <Col id="col1">bb</Col>
+            <Col id="col2">ee</Col>
+            <Col id="col3">hh</Col>
+          </Row>
+          <Row>
+            <Col id="col1">cc</Col>
+            <Col id="col2">ff</Col>
+            <Col id="col3">ii</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	if(this.isValidObject("ds_create"))
+	{
+		var objDataset = this.removeChild("ds_create"); 
+		delete objDataset; 
+		objDataset = null;
+	}
+	
+	var objDataset = new Dataset("ds_create");
+ 	objDataset.addColumn("Column0", "string");
+ 	objDataset.addColumn("Column1", "string");
+ 	objDataset.addColumn("Column2", "string");
+	
+	this.addChild(objDataset.name, objDataset);
+
+
+	for(var i=0; i<3; i++)
+	{
+		objDataset.addRow();
+		objDataset.setColumn(objDataset.rowposition, "Column0", "Data A-" + i);
+		objDataset.setColumn(objDataset.rowposition, "Column1", "Data B-" + i);
+		objDataset.setColumn(objDataset.rowposition, "Column2", "Data C-" + i);
+	}
+
+	this.Grid02.set_binddataset(objDataset.name) ;
+	this.Grid02.createFormat();
+
+}
+
+this.Button02_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds.addRow();	
+}
+
+this.Button03_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds.insertRow(this.ds.rowposition);
+}
+
+this.Button04_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds.deleteRow(this.ds.rowposition);		
+}
+
+this.Button05_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var sVal = this.ds.getColumn(this.ds.rowposition, "col1");
+	
+	this.alert(sVal);
+}
+
+this.Button06_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds.setColumn(this.ds.rowposition, "col1", "2000");	
+}
+
+this.Button07_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds.deleteAll();
+}
+
+this.Button08_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var sVal = this.ds.getOrgColumn(this.ds.rowposition, "col1");
+	
+	this.alert(sVal);
+}
+
+this.Button09_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var sVal = this.ds.getDeletedColumn(0, "col1");
+
+ 	this.alert(sVal);	
+}
+
+this.Button10_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds.reset();	
+}
+
+this.Button11_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds.addRow()
+	this.ds.copyRow(this.ds.rowposition, this.ds_other, 0);
+}
+
+this.Button12_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds.copyData(this.ds_other);	
+}
+
+this.Button13_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds.appendData(this.ds_other);	
+}
+
+this.Button14_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds.mergeData(this.ds_other);	
+}
+
+this.Button15_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds.clearData();
+}
+
+this.Button16_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds.clear();
+}
+
+this.Button17_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var nVal = this.ds.getSum("col1");
+	
+ 	this.alert(nVal);	
+}
+
+this.Button18_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var nVal = this.ds.getCaseSum("col1 > 10", "col1");
+	
+ 	this.alert(nVal);
+}
+
+this.Button19_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds.set_keystring("S:+col1+col2");	
+}
+
+this.Button20_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds.set_keystring("S:-col1-col2");	
+}
+
+this.Button21_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds.filter("col1 > 10");
+}
+
+this.Button22_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds.filter("");
+}
+
+this.Button23_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var nRow = this.ds.findRow("col1", "20");
+	
+ 	this.alert(nRow);
+}
+
+this.Button24_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var nRow = this.ds_other.findRowAs("col1", "b");
+	
+ 	this.alert(nRow);
+}
+
+this.Button25_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var nRow = this.ds.findRowExpr("col1 > 10");
+
+	this.alert(nRow);	
+}
+
+this.Button26_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var sVal = this.ds.saveXML();
+	this.TextArea00.set_value(sVal);		
+}
+
+
+this.fv_top = 45;
+this.comp_Dataset_onvscroll = function(obj:Form, e:nexacro.ScrollEventInfo)
+{
+	this.Div00.set_top(this.fv_top+e.pos);
+}
+]]></Script>
+  </Form>
+</FDL>

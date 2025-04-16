@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="LEFT" classname="LEFT" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Grid id="Grid00" taborder="0" binddataset="gds_menu" useinputpanel="false" autofittype="col" treeusecheckbox="false" treeinitstatus="expand,all" oncelldblclick="Grid00_oncelldblclick" left="3" top="3" width="190" bottom="8">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="182"/>
+              </Columns>
+              <Rows>
+                <Row size="24"/>
+              </Rows>
+              <Band id="body">
+                <Cell displaytype="tree" edittype="tree" style="linetype:onlyvert;background:transparent;background2:transparent;" text="bind:m_nm" treelevel="bind:m_lv" treestate="bind:m_st"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.Grid00_oncelldblclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	var sUI = application.gds_menu.getColumn(e.row, "m_ui");
+	var sID = application.gds_menu.getColumn(e.row, "m_id");
+	
+	if (sUI.length < 1)
+	{
+		return false;
+	}
+	
+	var objFrameSet = application.mainframe.VFrameSet0.HFrameSet0.FrameSet0;
+	
+	var arrObj = objFrameSet.all;
+	for(var i=0; i<arrObj.length; i++)
+	{
+		if(arrObj[i].name == sID)
+		{
+			arrObj[i].setFocus();
+			return;
+		}
+	}
+	
+	var objChildFrame = new ChildFrame();
+	objChildFrame.init(sID,"absolute", 0, 0, 800, 620);
+
+	objChildFrame.set_formurl(sUI);
+	objChildFrame.style.set_border("1px solid #808080");
+	objFrameSet.addChild(sID, objChildFrame);
+		
+	objChildFrame.show();
+}]]></Script>
+  </Form>
+</FDL>

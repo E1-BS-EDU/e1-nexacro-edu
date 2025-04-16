@@ -1,0 +1,24 @@
+﻿Static
+{
+	background : lavender;
+}
+
+Static:mouseover
+{
+	background : khaki;
+}
+
+#sta_title
+{
+	font : bold 12 verdana;
+}
+
+Static.val_chk1
+{
+	color : red;
+}
+
+Combo>#dropbutton
+{
+	background : yellow;
+}

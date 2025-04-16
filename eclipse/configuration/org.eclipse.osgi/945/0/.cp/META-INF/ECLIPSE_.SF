@@ -1,0 +1,204 @@
+Signature-Version: 1.0
+Created-By: 11.0.24 (Eclipse Adoptium)
+SHA-256-Digest-Manifest: n+CpzSCWLLenjPSPvqs1A8t5RWPh2DOhxUDrjikNW74=
+SHA-256-Digest-Manifest-Main-Attributes: oyNrWrptcThY5LAAFcd+CvbhZZVv5a0
+ 9iDOXgi+iE9k=
+
+Name: plugin.xml
+SHA-256-Digest: wtZWxOe0CPPgNVZ2J7jiBZHESX/Rdjbjt+WDAMX1m3o=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/registry/ProcessorType
+ Registry.class
+SHA-256-Digest: tt/AJYr85Pc5LFPj/GMTHQaregqSN9c074nkJD0ampI=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/JAXPJavaLaunchConfigur
+ ationDelegate.class
+SHA-256-Digest: 95ZsypgOPugpLfzaEqAqnO62Mwv6bdX0hsAc8RldbwU=
+
+Name: schema/processorType.exsd
+SHA-256-Digest: PoJE6m1zsj84n45ciCgLR0cJZOuveuPd9wD/voYFtO4=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/registry/ProcessorRegi
+ stry.class
+SHA-256-Digest: EgI1xBkbyUmgIYVTSzYoBNcEN6FefhZPqu1OKd8MpuE=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/Attribute.class
+SHA-256-Digest: PZIYAOVmFTQCQYVbFzRFtOM2wX0lRyyEEGMlNxJAiJ4=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/LaunchProperties.class
+SHA-256-Digest: v4oicRNjyEPQm8me2Phvgww0MQKZIy4Yx1y8ClYg9Fs=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/IOutputProperty.class
+SHA-256-Digest: EluYuFNW/5hrRuvtP0JphvxNnuNFVo3PlTx4/DwlHqA=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/registry/ProcessorType
+ RegistryReader.class
+SHA-256-Digest: t8GhJ09Bn3CGocq0KWpsCNInUOofR040HVMYYFHLcLw=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/TransformerFactory.cla
+ ss
+SHA-256-Digest: FHxROciIL7Oq+YiFT0p0uAd43BCka8EgvV0ys3nXk6k=
+
+Name: plugin.properties
+SHA-256-Digest: BqargiArmhZ1M7rS/YkiDAgakLx5tJ7qv3GPYka46bg=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/JAXPLaunchingPlugin.cl
+ ass
+SHA-256-Digest: 1lbYfkiq2rqUdTSkXGT8Adx2KOAqYAB/eZlfRlSSYEA=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/registry/InvokerRegist
+ ryReader.class
+SHA-256-Digest: 2+eOg33WvKCmbQ5ZjSSDMstRo+o1tPF7N4iObfT0B5I=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/JAXPJavaLaunchConfigur
+ ationDelegate$3.class
+SHA-256-Digest: FnvKu9Bs2zFDBfNadspuDt++/+zg/pVk1n1fb+SKyxM=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/registry/InvokerRegist
+ ry.class
+SHA-256-Digest: a+KMlDrw/DnZGrYC9xcYd3NvADQbuhfrsoBLbcwFybo=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/IAttribute.class
+SHA-256-Digest: 4ofFPvzcJuJb6R1ZytkXiooa8KeHZpqhvKqnxvJ8hw0=
+
+Name: schema/invoke.exsd
+SHA-256-Digest: zAiaTztsNGs2Zm3MHOxuOIuq0NRwWrgsjA95BvpmPMk=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/PreferenceInitializer.
+ class
+SHA-256-Digest: YsMAOdbI8GiLcqCz8JOWOKtP1ctReAHVT61LRZ4oiHg=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/messages.properties
+SHA-256-Digest: YT2rYM2+AgLOz7RJKXr8znzP7PVkhE7gh9l914CtMug=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/registry/DebuggerRegis
+ try.class
+SHA-256-Digest: /NsR3XdJxD2I/ZgUKlVk3nswC9lB5ou0dUC7GOmGN3Y=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/FeaturePreferences.cla
+ ss
+SHA-256-Digest: zOCj8CSTo8dETkFodGxwLLKct9A6bVwqJRt6eK2qQEc=
+
+Name: META-INF/maven/org.eclipse.webtools.sourceediting/org.eclipse.wst.
+ xsl.jaxp.launching/pom.xml
+SHA-256-Digest: J45EluTpCHpaI1nVSUycNwsM8Qs6supiJ99+rVncT5Y=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/LaunchAttributes.class
+SHA-256-Digest: FoB+vbUmyHlKeWsauX/cXoTBCXEUM9atmF4FLk1Ao40=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/IProcessorInvoker.class
+SHA-256-Digest: QFKPmvSLlSrmOblHJRYMcqwAkV2cbk2vTfYw5VZJuIU=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/registry/AbstractRegis
+ tryReader.class
+SHA-256-Digest: IScnsHO/l8xgd8ksRQO0m+IFsuRyAbr1n/nYR7lgjEM=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/JAXPJavaLaunchConfigur
+ ationDelegate$2.class
+SHA-256-Digest: QEChpJhoiIH8aIyvm65ZHShYenSb/W0Y27mI1Yo7heU=
+
+Name: JREDefaultAttributes.properties
+SHA-256-Digest: XIIcwCmH6NLlpgGa5wb1vcxrb3lmonTx/wRZf9FLSms=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/OutputProperty.class
+SHA-256-Digest: eKh4Y8dWprRtP90zDfLpjQcGIvVdg/XaN6dJX+VJxwA=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/model/JAXPDebugTarget.class
+SHA-256-Digest: HC38JcHD17LdfreBQCgWnas5kLAa/o9TgJB6I3bqU20=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/LaunchHelper.class
+SHA-256-Digest: 7mN56fmP29l7LqoyRCKRUM9pYDo9vuq0O1o27NTPro4=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/registry/DebuggerRegis
+ tryReader.class
+SHA-256-Digest: SuTvm2idJsCT5yuIEHUslrSBDbDIZSUjYGLV2Ovyqj0=
+
+Name: JREDefaultOutputProperties.properties
+SHA-256-Digest: CdZqRBDay8Jdw2VLBrCnJE0ZX7TBbq2Rdabu4Ag3I8c=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/ITransformerFactory.class
+SHA-256-Digest: CfwP5S72MYslJRqnpsc7OCD0CTUdr7mgZl5EaD6JPn4=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/ProcessorInstall.class
+SHA-256-Digest: alf+y5/eIWSZbJPQCn0WZqoTvLKilDyA5b7jm5YbrGg=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/ProcessorJar.class
+SHA-256-Digest: pT/0Ywtaq6hTYXPyXzN/cpeIwIm6OPJuUKCaslMdils=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/ProcessorPreferences.c
+ lass
+SHA-256-Digest: gc4bH+oTJkJl1vIRWpY+hUE6CnUFAHYcuyOsT/hnPkw=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/IProcessorInstall.class
+SHA-256-Digest: 3/WBbFQRLE9AB09NJNPHFjobB9AfjQwsb8+xWuiwEx4=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/IProcessorType.class
+SHA-256-Digest: 9yVZaf+jtaXHYxsa5FddorHRIxYIp60YDPscRViI3Fc=
+
+Name: about.html
+SHA-256-Digest: ncO+WCNUIJ0JLCOl/ot53yopwTqvvtVu0qSgblesdYo=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/registry/ProcessorRegi
+ stryReader.class
+SHA-256-Digest: /i90R9bUmX+stIrcPLDxsISDOR6/iX2mpKWhcK/Dk4A=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/JAXPJavaLaunchConfigur
+ ationDelegate$1.class
+SHA-256-Digest: bNdnFhPYgm4g511ACyPdL3x7LloVGSNiht5k+0mV4sM=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/DebuggerDescriptor.cla
+ ss
+SHA-256-Digest: 4e59Ajq9i3usz83q+bEQ5KD/+CvMm3zrgI6aTCUD48M=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/OutputPropertyPreferen
+ ces.class
+SHA-256-Digest: UI7yy1gWF6BItGJ1LoxdG7jiio6+pfnwhM5KjZm/cMM=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/JAXPRuntime.class
+SHA-256-Digest: axMk5LjfS4MfV+3/tLOiu20x+uy/ayxMJH86q6jWXpY=
+
+Name: schema/debugger.exsd
+SHA-256-Digest: 7GZ8cllo38TLVYd8lOpzGLl6ucy0e1yL0gFU1ySePtU=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/model/JAXPDebugTarget$EventDisp
+ atchJob.class
+SHA-256-Digest: P4ZzfayZgfYcrMqRjLaN3/FuKQZKYedgHqOFDdBEyz8=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/Messages.class
+SHA-256-Digest: kApjPcbui7G3QzQYxe9zgoscDTlHeq5oH76n4MsvmMU=
+
+Name: schema/processor.exsd
+SHA-256-Digest: t9DBb/I4y14ultqeBu9LyjrE1otJfSlKr1mt+I+dqEw=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/IProcessorJar.class
+SHA-256-Digest: UxfS0j9ld8iZ3AFHlH21wDcNrkUhusE4MHzuA47a8hQ=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/registry/AbstractRegis
+ tryReader$1.class
+SHA-256-Digest: wocE5CRO0fBP+BwpgEbThOMV/2gMEcamMfctKdwpWrM=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/ProcessorType.class
+SHA-256-Digest: orB5GvASQrE4/Ae7ry+vOYBbjOSdHEzyFXVS0zrU7js=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/Utils.class
+SHA-256-Digest: RJJBhrqD1xrmtE/8JHlyuXZ97cTxpRK6QDVBXH0JMRI=
+
+Name: META-INF/maven/org.eclipse.webtools.sourceediting/org.eclipse.wst.
+ xsl.jaxp.launching/pom.properties
+SHA-256-Digest: 8VqBRmEuqlolcO7zPuEhuWlvVOM3WqBwjWewHMbyY1U=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/JAXPLaunchConfigurationConstant
+ s.class
+SHA-256-Digest: 89TY/4gs9Y5V9cSPCZ7gAsASi6noc6QTzQ5DqwwZ4zo=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/ProcessorInvokerDescri
+ ptor.class
+SHA-256-Digest: po8czSYuk47t0NeF+qj+SwvYH4c688XMSGh8NegQHkk=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/internal/PluginProcessorJar.cla
+ ss
+SHA-256-Digest: vwoRvAzXlnd54dILz2Px7D2qVtGnBFmz1NcuzSLMR98=
+
+Name: org/eclipse/wst/xsl/jaxp/launching/IDebugger.class
+SHA-256-Digest: vmbV0amu8UdA0gCQgoRr5XUqa3GPC419JTkk5/HNjRM=
+

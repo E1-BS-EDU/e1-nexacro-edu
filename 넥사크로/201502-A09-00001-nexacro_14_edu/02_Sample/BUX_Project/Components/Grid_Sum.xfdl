@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="comp_Grid_Sum" classname="GridSort" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Grid id="Grid00" taborder="0" useinputpanel="false" left="30" top="50" width="320" height="458" binddataset="ds_suppress" onheaddblclick="Grid00_onheaddblclick" selecttype="row">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="CORP"/>
+                <Cell col="1" text="DEPT"/>
+                <Cell col="2" text="NAME"/>
+                <Cell col="3" text="SALARY"/>
+              </Band>
+              <Band id="body" style="cellbackground2:#ffffffff;">
+                <Cell text="bind:CORP" suppress="1" suppressalign="middle"/>
+                <Cell col="1" text="bind:DEPT" suppress="2" suppressalign="middle"/>
+                <Cell col="2" text="bind:NAME"/>
+                <Cell col="3" text="bind:SALARY"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid01" taborder="1" binddataset="ds_subsum" useinputpanel="false" onheaddblclick="Grid00_onheaddblclick" left="376" top="50" width="406" height="651">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="86"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="CORP"/>
+                <Cell col="1" text="DEPT"/>
+                <Cell col="2" text="NAME"/>
+                <Cell col="3" text="SALARY"/>
+                <Cell col="4" text="getRowLevel"/>
+              </Band>
+              <Band id="body" style="cellbackground2:#ffffffff;">
+                <Cell style="background:khaki;background2:khaki;" text="expr:(dataset.getRowLevel(currow) == 0 ? CORP : dataset.getColumn(currow-dataset.getRowLevel(currow), 'CORP'))" suppress="1" suppressalign="middle"/>
+                <Cell col="1" style="background:EXPR(dataset.getRowLevel(currow) == 0 ? 'lightyellow' : (dataset.getRowLevel(currow) == 1 ? 'lightyellow' : 'khaki'));background2:EXPR(dataset.getRowLevel(currow) == 0 ? 'lightyellow' : (dataset.getRowLevel(currow) == 1 ? 'lightyellow' : 'khaki'));" text="expr:(dataset.getRowLevel(currow) == 0 ? DEPT : dataset.getColumn(currow-dataset.getRowLevel(currow), 'DEPT'))" suppress="2" suppressalign="middle"/>
+                <Cell col="2" style="background:EXPR(dataset.getRowLevel(currow) == 2 ? 'khaki' : (dataset.getRowLevel(currow) == 1 ? 'lightyellow' : ''));background2:EXPR(dataset.getRowLevel(currow) == 2 ? 'khaki' : (dataset.getRowLevel(currow) == 1 ? 'lightyellow' : ''));" text="bind:NAME"/>
+                <Cell col="3" style="background:EXPR(dataset.getRowLevel(currow) == 2 ? &quot;khaki&quot; : (dataset.getRowLevel(currow) == 1 ? &quot;lightyellow&quot; : &quot;&quot;));background2:EXPR(dataset.getRowLevel(currow) == 2 ? &quot;khaki&quot; : (dataset.getRowLevel(currow) == 1 ? &quot;lightyellow&quot; : &quot;&quot;));" text="bind:SALARY"/>
+                <Cell col="4" style="background:EXPR(dataset.getRowLevel(currow) == 2 ? &quot;khaki&quot; : (dataset.getRowLevel(currow) == 1 ? &quot;lightyellow&quot; : &quot;&quot;));background2:EXPR(dataset.getRowLevel(currow) == 2 ? &quot;khaki&quot; : (dataset.getRowLevel(currow) == 1 ? &quot;lightyellow&quot; : &quot;&quot;));" text="expr:dataset.getRowLevel(currow)"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static01" taborder="2" text="1) supress" left="20" top="20" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static00" taborder="3" text="2) subsum" left="364" top="20" width="150" height="20" style="font:bold 9 arial;"/>
+        <Button id="Button00" taborder="4" text="SUM" left="530" top="21" width="48" height="26" onclick="Button_onclick"/>
+        <Button id="Button01" taborder="5" text="AVG" onclick="Button_onclick" left="581" top="21" width="48" height="26"/>
+        <Button id="Button02" taborder="6" text="MAX" onclick="Button_onclick" left="632" top="21" width="48" height="26"/>
+        <Button id="Button03" taborder="7" text="MIN" onclick="Button_onclick" left="683" top="21" width="48" height="26"/>
+        <Button id="Button04" taborder="8" text="COUNT" onclick="Button_onclick" left="734" top="21" width="48" height="26"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_suppress">
+        <ColumnInfo>
+          <Column id="CORP" type="STRING" size="256"/>
+          <Column id="DEPT" type="STRING" size="256"/>
+          <Column id="NAME" type="STRING" size="256"/>
+          <Column id="HIRE_DATE" type="DATE" size="256"/>
+          <Column id="SALARY" type="INT" size="256"/>
+          <Column id="GENDER" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Sales</Col>
+            <Col id="NAME">Kylie</Col>
+            <Col id="HIRE_DATE">20040521</Col>
+            <Col id="SALARY">1000</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Sales</Col>
+            <Col id="NAME">Vivian</Col>
+            <Col id="HIRE_DATE">20010806</Col>
+            <Col id="SALARY">2000</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Sales</Col>
+            <Col id="NAME">Walter</Col>
+            <Col id="HIRE_DATE">20070628</Col>
+            <Col id="SALARY">3000</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Marketing</Col>
+            <Col id="NAME">Bert</Col>
+            <Col id="HIRE_DATE">20040819</Col>
+            <Col id="SALARY">2000</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Marketing</Col>
+            <Col id="NAME">Kerry</Col>
+            <Col id="HIRE_DATE">20091104</Col>
+            <Col id="SALARY">4000</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Russell</Col>
+            <Col id="HIRE_DATE">20010915</Col>
+            <Col id="SALARY">6000</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Ina</Col>
+            <Col id="HIRE_DATE">20101105</Col>
+            <Col id="SALARY">100</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Bert</Col>
+            <Col id="HIRE_DATE">20030328</Col>
+            <Col id="SALARY">200</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Josephine</Col>
+            <Col id="HIRE_DATE">20051126</Col>
+            <Col id="SALARY">300</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Sales</Col>
+            <Col id="NAME">Leo</Col>
+            <Col id="HIRE_DATE">20071127</Col>
+            <Col id="SALARY">200</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Sales</Col>
+            <Col id="NAME">Erica</Col>
+            <Col id="HIRE_DATE">20050319</Col>
+            <Col id="SALARY">400</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Sales</Col>
+            <Col id="NAME">Nicole</Col>
+            <Col id="HIRE_DATE">20120223</Col>
+            <Col id="SALARY">600</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Marketing</Col>
+            <Col id="NAME">Boris</Col>
+            <Col id="HIRE_DATE">20120203</Col>
+            <Col id="SALARY">10</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Marketing</Col>
+            <Col id="NAME">Ali</Col>
+            <Col id="HIRE_DATE">20020803</Col>
+            <Col id="SALARY">20</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Violet</Col>
+            <Col id="HIRE_DATE">20081204</Col>
+            <Col id="SALARY">30</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Indigo</Col>
+            <Col id="HIRE_DATE">20030327</Col>
+            <Col id="SALARY">20</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Oliver</Col>
+            <Col id="HIRE_DATE">20011109</Col>
+            <Col id="SALARY">40</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Kane</Col>
+            <Col id="HIRE_DATE">20040415</Col>
+            <Col id="SALARY">60</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_subsum" keystring="G:-CORP,-DEPT">
+        <ColumnInfo>
+          <Column id="CORP" type="STRING" size="256"/>
+          <Column id="DEPT" type="STRING" size="256"/>
+          <Column id="NAME" type="STRING" size="256"/>
+          <Column id="HIRE_DATE" type="DATE" size="256"/>
+          <Column id="SALARY" type="INT" size="256"/>
+          <Column id="GENDER" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Sales</Col>
+            <Col id="NAME">Kylie</Col>
+            <Col id="HIRE_DATE">20040521</Col>
+            <Col id="SALARY">1000</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Sales</Col>
+            <Col id="NAME">Vivian</Col>
+            <Col id="HIRE_DATE">20010806</Col>
+            <Col id="SALARY">2000</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Sales</Col>
+            <Col id="NAME">Walter</Col>
+            <Col id="HIRE_DATE">20070628</Col>
+            <Col id="SALARY">3000</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Marketing</Col>
+            <Col id="NAME">Bert</Col>
+            <Col id="HIRE_DATE">20040819</Col>
+            <Col id="SALARY">2000</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Marketing</Col>
+            <Col id="NAME">Kerry</Col>
+            <Col id="HIRE_DATE">20091104</Col>
+            <Col id="SALARY">4000</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Russell</Col>
+            <Col id="HIRE_DATE">20010915</Col>
+            <Col id="SALARY">6000</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Ina</Col>
+            <Col id="HIRE_DATE">20101105</Col>
+            <Col id="SALARY">100</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Bert</Col>
+            <Col id="HIRE_DATE">20030328</Col>
+            <Col id="SALARY">200</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Josephine</Col>
+            <Col id="HIRE_DATE">20051126</Col>
+            <Col id="SALARY">300</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Sales</Col>
+            <Col id="NAME">Leo</Col>
+            <Col id="HIRE_DATE">20071127</Col>
+            <Col id="SALARY">200</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Sales</Col>
+            <Col id="NAME">Erica</Col>
+            <Col id="HIRE_DATE">20050319</Col>
+            <Col id="SALARY">400</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Sales</Col>
+            <Col id="NAME">Nicole</Col>
+            <Col id="HIRE_DATE">20120223</Col>
+            <Col id="SALARY">600</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Marketing</Col>
+            <Col id="NAME">Boris</Col>
+            <Col id="HIRE_DATE">20120203</Col>
+            <Col id="SALARY">10</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Marketing</Col>
+            <Col id="NAME">Ali</Col>
+            <Col id="HIRE_DATE">20020803</Col>
+            <Col id="SALARY">20</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Violet</Col>
+            <Col id="HIRE_DATE">20081204</Col>
+            <Col id="SALARY">30</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Indigo</Col>
+            <Col id="HIRE_DATE">20030327</Col>
+            <Col id="SALARY">20</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Oliver</Col>
+            <Col id="HIRE_DATE">20011109</Col>
+            <Col id="SALARY">40</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Kane</Col>
+            <Col id="HIRE_DATE">20040415</Col>
+            <Col id="SALARY">60</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.Button_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var objColumnInfo = this.ds_subsum.getColumnInfo("SALARY");
+	objColumnInfo.set_prop(obj.text);
+
+	this.ds_subsum.updateSortGroup();
+}
+]]></Script>
+  </Form>
+</FDL>

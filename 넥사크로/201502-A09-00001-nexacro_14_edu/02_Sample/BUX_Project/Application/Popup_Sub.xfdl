@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="Popup_Sub" classname="Popup_showModal_Sub" left="0" top="0" width="300" height="250" titletext="New Form" onload="Popup_showModal_Sub_onload">
+    <Layouts>
+      <Layout>
+        <Button id="Button01" taborder="1" text="Close" onclick="Button01_onclick" left="152" top="184" width="100" height="30"/>
+        <Button id="Button00" taborder="4" text="Parent Call" left="48" top="184" width="100" height="30" onclick="Button00_onclick"/>
+        <Edit id="Edit00" taborder="5" left="134" top="50" width="120" height="30" enable="false"/>
+        <Static id="Static04" taborder="6" text="Parameter1" left="36" top="56" width="78" height="20"/>
+        <Edit id="Edit01" taborder="7" left="134" top="88" width="120" height="30" enable="false"/>
+        <Static id="Static00" taborder="8" text="Parameter2" left="36" top="94" width="78" height="20"/>
+        <Static id="Static01" taborder="9" text="Return" left="36" top="134" width="78" height="20"/>
+        <Edit id="Edit02" taborder="10" left="134" top="128" width="120" height="30"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+
+this.Popup_showModal_Sub_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	 this.Edit00.set_value(this.parent.param1);
+	 this.Edit01.set_value(this.parent.param2);
+}
+
+
+this.Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.opener.fn_parent();
+}
+
+this.Button01_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+ 	this.close(this.Edit02.value);
+}]]></Script>
+  </Form>
+</FDL>

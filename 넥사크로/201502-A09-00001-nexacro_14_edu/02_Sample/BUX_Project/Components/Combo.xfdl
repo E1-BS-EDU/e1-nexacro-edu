@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="comp_Combo" classname="comp_Button" inheritanceid="" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Combo id="cmbDeptID" taborder="0" innerdataset="ds_dept" codecolumn="code" datacolumn="text" left="30" top="50" width="200" height="30"/>
+        <Combo id="cmbDeptID00" taborder="1" innerdataset="@ds_search" codecolumn="code" datacolumn="text" left="30" top="201" width="200" height="30" type="search"/>
+        <Combo id="cmbDeptID01" taborder="2" innerdataset="@ds_search" codecolumn="code" datacolumn="text" type="filter" left="30" top="277" width="200" height="30"/>
+        <Combo id="cmbDeptID02" taborder="3" left="30" top="120" width="200" height="30" codecolumn="codecolumn" datacolumn="datacolumn">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">01</Col>
+                <Col id="datacolumn">Sales</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">02</Col>
+                <Col id="datacolumn">IT</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">03</Col>
+                <Col id="datacolumn">Education</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">04</Col>
+                <Col id="datacolumn">Marketing</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">05</Col>
+                <Col id="datacolumn">HR</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Div id="Div00" taborder="4" left="32" top="352" width="239" height="35" style="border:1 solid #808080ff ;">
+          <Layouts>
+            <Layout>
+              <Edit id="Edit00" taborder="0" left="2" top="2" width="76" height="29"/>
+              <Edit id="Edit01" taborder="1" left="79" top="2" width="125" height="29"/>
+              <Button id="Button00" taborder="2" left="206" top="2" width="29" height="28" onclick="Div00_Button00_onclick" style="background:@gradation URL('theme://images\btn_drop_N.png') center middle;"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <PopupDiv id="PopupDiv00" left="31" top="387" width="242" height="123" style="border:1 solid #808080ff ;" visible="false">
+          <Layouts>
+            <Layout>
+              <Grid id="Grid00" taborder="0" useinputpanel="false" left="0" top="-2" width="240" height="122" binddataset="ds_dept" autofittype="col" oncellclick="PopupDiv00_Grid00_oncellclick">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="160"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="body">
+                      <Cell style="background:transparent;background2:transparent;" text="bind:code"/>
+                      <Cell col="1" style="background:transparent;background2:transparent;" text="bind:text"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+        <Static id="Static05" taborder="5" text="1) Basic" left="20" top="20" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static00" taborder="6" text="3) Search" left="20" top="172" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static01" taborder="7" text="4) Filter" left="20" top="252" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static02" taborder="8" text="2) Contents" left="20" top="92" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static03" taborder="9" text="5) Multi Combo" left="20" top="324" width="150" height="20" style="font:bold 9 arial;"/>
+      </Layout>
+    </Layouts>
+    <Bind/>
+    <Objects>
+      <Dataset id="ds_dept" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="text" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">01</Col>
+            <Col id="text">Sales</Col>
+          </Row>
+          <Row>
+            <Col id="code">02</Col>
+            <Col id="text">IT</Col>
+          </Row>
+          <Row>
+            <Col id="code">03</Col>
+            <Col id="text">Education</Col>
+          </Row>
+          <Row>
+            <Col id="code">04</Col>
+            <Col id="text">Marketing</Col>
+          </Row>
+          <Row>
+            <Col id="code">05</Col>
+            <Col id="text">HR</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_search" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="text" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">01</Col>
+            <Col id="text">Sales1</Col>
+          </Row>
+          <Row>
+            <Col id="code">02</Col>
+            <Col id="text">Sales2</Col>
+          </Row>
+          <Row>
+            <Col id="code">03</Col>
+            <Col id="text">Sales3</Col>
+          </Row>
+          <Row>
+            <Col id="code">04</Col>
+            <Col id="text">IT1</Col>
+          </Row>
+          <Row>
+            <Col id="code">05</Col>
+            <Col id="text">IT2</Col>
+          </Row>
+          <Row>
+            <Col id="code">06</Col>
+            <Col id="text">Marketing1</Col>
+          </Row>
+          <Row>
+            <Col id="code">07</Col>
+            <Col id="text">Marketing2</Col>
+          </Row>
+          <Row>
+            <Col id="code">08</Col>
+            <Col id="text">Marketing3</Col>
+          </Row>
+          <Row>
+            <Col id="code">09</Col>
+            <Col id="text">HR1</Col>
+          </Row>
+          <Row>
+            <Col id="code">10</Col>
+            <Col id="text">HR2</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.Div00_Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.PopupDiv00.trackPopupByComponent(this.Div00, 0, this.Div00.getOffsetHeight()+2);
+}
+
+this.PopupDiv00_Grid00_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	this.Div00.Edit00.set_value(this.ds_dept.getColumn(e.row, "code"));
+	this.Div00.Edit01.set_value(this.ds_dept.getColumn(e.row, "text"));
+	this.PopupDiv00.closePopup();
+}
+]]></Script>
+  </Form>
+</FDL>

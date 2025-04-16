@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="SelectEMP" classname="SelectEMP" inheritanceid="" left="0" top="0" width="800" height="600" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Static id="sta_title" text="Employees" left="12" top="16" width="116" height="34"/>
+        <Edit id="edtSearch" taborder="1" left="131" top="16" width="116" height="34"/>
+        <Button id="btnRetrieve" taborder="2" text="Retrieve" left="281" top="16" width="116" height="34" onclick="fn_Retrieve" position="absolute"/>
+        <Grid id="Grid00" taborder="3" useinputpanel="false" left="10" top="61" width="768" height="521" binddataset="ds_emp" autoenter="select">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="40"/>
+                <Column size="72"/>
+                <Column size="139"/>
+                <Column size="89"/>
+                <Column size="102"/>
+                <Column size="63"/>
+                <Column size="80"/>
+                <Column size="117"/>
+                <Column size="281"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+                <Row size="24" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell/>
+                <Cell col="1" colspan="2" text="Employees"/>
+                <Cell col="3" rowspan="2" text="Dept"/>
+                <Cell col="4" rowspan="2" text="HireDate"/>
+                <Cell col="5" rowspan="2" text="Gender"/>
+                <Cell col="6" rowspan="2" text="Married"/>
+                <Cell col="7" rowspan="2" text="Salary"/>
+                <Cell col="8" rowspan="2" text="Memo"/>
+                <Cell row="1"/>
+                <Cell row="1" col="1" text="ID"/>
+                <Cell row="1" col="2" text="Name"/>
+              </Band>
+              <Band id="body">
+                <Cell celltype="head" style="align:center;background:gainsboro;background2:gainsboro;" text="expr:currow+1"/>
+                <Cell col="1" style="align:center;color:EXPR(GENDER=='W' ? 'blue' : 'red' );color2:EXPR(GENDER=='W' ? 'blue' : 'red' );" text="bind:EMPL_ID" mask="AA-###"/>
+                <Cell col="2" edittype="normal" style="color:EXPR(GENDER=='W' ? 'blue' : 'red' );color2:EXPR(GENDER=='W' ? 'blue' : 'red' );" text="bind:FULL_NAME" editdisplay="display"/>
+                <Cell col="3" displaytype="combo" edittype="expr:SALARY &gt; 3000 ? 'none' : 'combo'" text="bind:DEPT_ID" combodataset="ds_dept" combocodecol="code" combodatacol="text" combodisplay="expr:SALARY &gt; 3000 ? 'edit' : 'display'"/>
+                <Cell col="4" displaytype="date" edittype="date" text="bind:HIRE_DATE" calendardisplay="display"/>
+                <Cell col="5" text="expr:GENDER=='W' ? 'Female' : 'Male'"/>
+                <Cell col="6" displaytype="checkbox" edittype="checkbox" text="bind:MARRIED"/>
+                <Cell col="7" text="bind:SALARY"/>
+                <Cell col="8" text="bind:EMPL_MEMO"/>
+              </Band>
+              <Band id="summary">
+                <Cell/>
+                <Cell col="1" colspan="2" style="align:center;" text="expr:'Total : '+comp.parent.ds_emp. getRowCount()"/>
+                <Cell col="3"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+                <Cell col="6"/>
+                <Cell col="7" displaytype="number" text="expr:comp.parent.ds_emp.getSum('SALARY')"/>
+                <Cell col="8"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btnAdd" taborder="4" text="Add" onclick="btnAdd_onclick" left="407" top="16" width="116" height="34"/>
+        <Button id="btnDelete" taborder="5" text="Delete" onclick="btnDelete_onclick" left="534" top="16" width="116" height="34"/>
+        <Button id="btnSave" taborder="6" text="Save" onclick="btnSave_onclick" left="661" top="16" width="116" height="34"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_dept" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="text" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">01</Col>
+            <Col id="text">Sales</Col>
+          </Row>
+          <Row>
+            <Col id="code">02</Col>
+            <Col id="text">IT</Col>
+          </Row>
+          <Row>
+            <Col id="code">03</Col>
+            <Col id="text">Education</Col>
+          </Row>
+          <Row>
+            <Col id="code">04</Col>
+            <Col id="text">Marketing</Col>
+          </Row>
+          <Row>
+            <Col id="code">05</Col>
+            <Col id="text">HR</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_emp" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false" onload="ds_employees_onload">
+        <ColumnInfo>
+          <Column id="EMPL_ID" type="STRING" size="5"/>
+          <Column id="FULL_NAME" type="STRING" size="10"/>
+          <Column id="DEPT_ID" type="STRING" size="2"/>
+          <Column id="HIRE_DATE" type="DATE" size="8"/>
+          <Column id="GENDER" type="STRING" size="1"/>
+          <Column id="MARRIED" type="STRING" size="1"/>
+          <Column id="SALARY" type="INT" size="10"/>
+          <Column id="EMPL_MEMO" type="STRING" size="500"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="EMPL_ID">AA001</Col>
+            <Col id="FULL_NAME">ShinSoo Choo</Col>
+            <Col id="DEPT_ID">01</Col>
+            <Col id="HIRE_DATE">20011104</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">1</Col>
+            <Col id="SALARY">2000</Col>
+            <Col id="EMPL_MEMO">baseball</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">BB001</Col>
+            <Col id="FULL_NAME">Yuna Kim</Col>
+            <Col id="DEPT_ID">02</Col>
+            <Col id="HIRE_DATE">20050305</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">3000</Col>
+            <Col id="EMPL_MEMO">figure skating</Col>
+          </Row>
+          <Row>
+            <Col id="FULL_NAME">Sumi Jo</Col>
+            <Col id="EMPL_ID">CC001</Col>
+            <Col id="DEPT_ID">03</Col>
+            <Col id="HIRE_DATE">20100506</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">5000</Col>
+            <Col id="EMPL_MEMO">singer</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">DD001</Col>
+            <Col id="FULL_NAME">JS Park</Col>
+            <Col id="DEPT_ID">04</Col>
+            <Col id="HIRE_DATE">20101123</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">3500</Col>
+            <Col id="EMPL_MEMO">soccer</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.fn_Retrieve = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var sSearch=this.edtSearch.text;
+	
+	if( String(sSearch).valueOf() == "undefined") 
+	{
+		sSearch="";
+	}
+
+	this.transaction("trSelect"
+					,"DataURL::employees_select.jsp?full_name="+sSearch
+					,""
+					,"ds_emp=ds_employees" 
+					,""
+					,"fn_callback");
+}
+
+this.btnAdd_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds_emp.addRow();
+}
+
+this.btnDelete_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.ds_emp.deleteRow(this.ds_emp.rowposition);
+}
+
+this.btnSave_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.transaction("trSave"
+					,"DataURL::employees_save.jsp"
+					,"in_ds=ds_emp:u"
+					,"" 
+					,"sVal1=1"
+					,"fn_callback");
+}		
+
+this.fn_callback = function(trID, nErrCD, sErrMSG)
+{
+	if(trID == "trSelect")
+	{
+		if (nErrCD < 0)
+		{
+			this.alert("Select : Fail!!!:"+sErrMSG);
+		}
+		else
+		{
+			this.alert("Select : Success");
+		}
+	}
+	else if(trID == "trSave")
+	{
+		if(nErrCD < 0)
+		{
+			this.alert("Save : Fail!!!"+sErrMSG);
+		}
+		else
+		{
+			this.alert("Success!!!");
+		}
+	}
+}
+]]></Script>
+  </Form>
+</FDL>

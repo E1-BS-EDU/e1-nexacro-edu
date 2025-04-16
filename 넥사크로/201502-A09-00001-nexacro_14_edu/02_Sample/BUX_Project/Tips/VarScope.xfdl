@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="Hello" classname="Hello" inheritanceid="" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Button id="Button00" taborder="0" text="Global Variable" left="280" top="100" width="190" height="41" onclick="Button00_onclick"/>
+        <Static id="Static00" text="Global" left="100" top="100" width="172" height="41" style="background:gainsboro;align:center middle;"/>
+        <Button id="Button02" taborder="2" text="include  Variable" left="282" top="201" width="190" height="41" onclick="Button02_onclick"/>
+        <Button id="Button03" taborder="3" text="Form  Variable" left="282" top="256" width="190" height="41" onclick="Button03_onclick"/>
+        <Button id="Button04" taborder="4" text="Function  Variable" left="284" top="313" width="190" height="41" onclick="Button04_onclick"/>
+        <Static id="Static01" text="Include" left="100" top="201" width="172" height="41" style="background:gainsboro;align:center middle;"/>
+        <Static id="Static02" text="Form" left="100" top="257" width="172" height="41" style="background:gainsboro;align:center middle;"/>
+        <Static id="Static03" text="Function" left="100" top="313" width="172" height="41" style="background:gainsboro;align:center middle;"/>
+        <Button id="Button01" taborder="5" text="ADL" left="282" top="151" width="190" height="41" onclick="Button01_onclick"/>
+        <Static id="Static04" text="ADL(Launch Project)" left="100" top="151" width="172" height="41" style="background:gainsboro;align:center middle;"/>
+        <Static id="Static05" text="  ex) application.gvUserID" left="480" top="104" width="361" height="35" style="background:gainsboro;align:left middle;"/>
+        <Static id="Static06" text="  ex) application.sADLVariable" left="480" top="153" width="361" height="35" style="background:gainsboro;align:left middle;"/>
+        <Static id="Static07" text="  ex) this.sIncludeVar" left="480" top="205" width="361" height="35" style="background:gainsboro;align:left middle;"/>
+        <Static id="Static08" text="  ex) this.sFormVar" left="480" top="259" width="361" height="35" style="background:gainsboro;align:left middle;"/>
+        <Static id="Static09" left="480" top="317" width="361" height="35" style="background:gainsboro;align:left middle;" text="   ex) sLocalVar"/>
+        <Div id="Div00" taborder="6" left="280" top="370" width="196" height="97" url="Tips::VarScope_Sub1.xfdl" style="border:1 solid #808080ff ;"/>
+        <Static id="Static10" text="Div" left="100" top="369" width="172" height="98" style="background:gainsboro;align:center middle;"/>
+        <Static id="Static11" text="Tab" left="100" top="481" width="172" height="98" style="background:gainsboro;align:center middle;"/>
+        <Static id="Static12" text="   ex) this.parent.sFormVar" left="480" top="373" width="361" height="91" style="background:gainsboro;align:left middle;"/>
+        <Tab id="Tab00" taborder="7" left="282" top="482" width="193" height="100" tabindex="0" scrollbars="autoboth">
+          <Tabpages>
+            <Tabpage id="tabpage1" text="tabpage1" url="Tips::VarScope_Sub2.xfdl"/>
+            <Tabpage id="tabpage2" text="tabpage2"/>
+          </Tabpages>
+        </Tab>
+        <Static id="Static13" text="   ex) this.parent.parent.sFormVar" left="480" top="485" width="361" height="91" style="background:gainsboro;align:left middle;"/>
+        <Static id="Static14" text=" ** 변수 Scope" left="100" top="44" width="742" height="41" style="background:gray;color:white;align:left middle;font:14 Dotum;"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[include "Lib::VarUse.xjs"
+
+this.sFormVar="sFormVar Value";
+
+// Global Variable
+this.Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	application.setVariable("gvTest", "gvTest Value");
+	
+	// 되는거
+	this.alert("Create : "+application.gvTest);   
+	this.alert("Read : "+application.gvUserID);
+}
+
+// ADL : Launch Project로 구동시켜야 확인됨
+// ADL에 있는 function내부의 변수
+this.Button01_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.alert(application.sADLVariable);
+}
+
+// include된 xjs에 선언된 변수
+this.Button02_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.alert(this.sIncludeVar);
+}
+
+// Form변수
+this.Button03_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.alert(this.sFormVar);
+}
+
+// Local변수
+this.Button04_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var sLocalVar="sLocalVar Value";
+	
+	this.alert(sLocalVar);
+}
+
+
+]]></Script>
+  </Form>
+</FDL>

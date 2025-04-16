@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="Hello" classname="Hello" inheritanceid="" left="0" top="0" width="800" height="600" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Button id="btnHello" taborder="0" text="Hello! nexacro platform 14" left="87" top="81" width="164" height="60" onclick="btnHello_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.btnHello_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.alert("Hello! nexacro platform 14");
+}
+]]></Script>
+  </Form>
+</FDL>

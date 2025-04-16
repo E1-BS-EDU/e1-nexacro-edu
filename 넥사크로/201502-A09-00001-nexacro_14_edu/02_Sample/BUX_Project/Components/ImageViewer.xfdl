@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="comp_ImageViewer" classname="comp_Button" inheritanceid="" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <ImageViewer id="ImageViewer00" taborder="0" left="30" top="50" width="200" height="100" image="URL('theme://images\btn_CalDrop.png')" stretch="none"/>
+        <ImageViewer id="ImageViewer02" taborder="2" left="30" top="203" width="200" height="100" image="URL('nexacro_platform')"/>
+        <Static id="Static05" taborder="3" text="1) Theme Image" left="20" top="20" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static00" taborder="4" text="2) Global Image" left="20" top="172" width="150" height="20" style="font:bold 9 arial;"/>
+        <ImageViewer id="ImageViewer01" taborder="6" image="URL('Images::nexacro_platform.png')" left="30" top="355" width="200" height="100"/>
+        <Static id="Static03" taborder="7" text="3) URL" left="20" top="324" width="150" height="20" style="font:bold 9 arial;"/>
+        <ImageViewer id="ImageViewer03" taborder="8" image="URL('theme://images\btn_CalDrop.png')" left="30" top="584" width="133" height="55" stretch="fixaspectratio"/>
+        <Static id="Static01" taborder="9" text="4) Stretch" left="20" top="484" width="150" height="20" style="font:bold 9 arial;"/>
+        <ImageViewer id="ImageViewer04" taborder="10" image="URL('theme://images\btn_CalDrop.png')" stretch="fit" left="30" top="515" width="133" height="55"/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

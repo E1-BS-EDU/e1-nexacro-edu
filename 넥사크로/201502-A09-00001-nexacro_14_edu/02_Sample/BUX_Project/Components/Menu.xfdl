@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="comp_Menu" classname="comp_Button" inheritanceid="" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Menu id="Menu00" taborder="1" left="30" top="50" width="400" height="30" innerdataset="@ds_menu" captioncolumn="m_nm" enablecolumn="m_enable" idcolumn="m_id" levelcolumn="m_lv" checkboxcolumn="m_chk" hotkeycolumn="m_hotkey"/>
+        <Static id="Static05" taborder="2" text="1) innerdataset" left="20" top="20" width="150" height="20" style="font:bold 9 arial;"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_menu">
+        <ColumnInfo>
+          <Column id="m_id" type="STRING" size="256"/>
+          <Column id="m_nm" type="STRING" size="256"/>
+          <Column id="m_lv" type="STRING" size="256"/>
+          <Column id="m_chk" type="STRING" size="256"/>
+          <Column id="m_enable" type="STRING" size="256"/>
+          <Column id="m_hotkey" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="m_id">1</Col>
+            <Col id="m_nm">Main1</Col>
+            <Col id="m_lv">0</Col>
+            <Col id="m_chk">0</Col>
+            <Col id="m_enable">1</Col>
+            <Col id="m_hotkey"/>
+          </Row>
+          <Row>
+            <Col id="m_id">2</Col>
+            <Col id="m_nm">Sub1</Col>
+            <Col id="m_lv">1</Col>
+            <Col id="m_chk">0</Col>
+            <Col id="m_enable">1</Col>
+            <Col id="m_hotkey"/>
+          </Row>
+          <Row>
+            <Col id="m_id">3</Col>
+            <Col id="m_nm">Leaf1</Col>
+            <Col id="m_lv">2</Col>
+            <Col id="m_chk">1</Col>
+            <Col id="m_enable">1</Col>
+            <Col id="m_hotkey">F1</Col>
+          </Row>
+          <Row>
+            <Col id="m_id">4</Col>
+            <Col id="m_nm">Leaf2</Col>
+            <Col id="m_lv">2</Col>
+            <Col id="m_chk">0</Col>
+            <Col id="m_enable">0</Col>
+            <Col id="m_hotkey">F2</Col>
+          </Row>
+          <Row>
+            <Col id="m_id">5</Col>
+            <Col id="m_nm">Main2</Col>
+            <Col id="m_lv">0</Col>
+            <Col id="m_chk">0</Col>
+            <Col id="m_enable">1</Col>
+          </Row>
+          <Row>
+            <Col id="m_id">6</Col>
+            <Col id="m_nm">Sub2</Col>
+            <Col id="m_lv">1</Col>
+            <Col id="m_chk">0</Col>
+            <Col id="m_enable">1</Col>
+          </Row>
+          <Row>
+            <Col id="m_id">7</Col>
+            <Col id="m_nm">Leaf3</Col>
+            <Col id="m_lv">2</Col>
+            <Col id="m_chk">1</Col>
+            <Col id="m_enable">1</Col>
+            <Col id="m_hotkey">F3</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[]]></Script>
+  </Form>
+</FDL>

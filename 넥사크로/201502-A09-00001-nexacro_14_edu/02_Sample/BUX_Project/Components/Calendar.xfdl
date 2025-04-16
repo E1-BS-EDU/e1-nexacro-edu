@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="comp_Calendar" classname="comp_Button" inheritanceid="" left="0" top="0" width="1024" height="768" titletext="New Form" onload="comp_Calendar_onload">
+    <Layouts>
+      <Layout>
+        <Calendar id="Calendar00" taborder="1" left="30" top="50" width="200" height="30" value="20140701" dateformat="yyyy-MM-dd ddd"/>
+        <Calendar id="Calendar01" taborder="2" value="20140701" left="30" top="126" width="200" height="30" dateformat="yyyy/MM/dd" editformat="yyyy/MM/dd"/>
+        <Calendar id="Calendar02" taborder="3" value="20140701" left="30" top="361" width="200" height="30" type="spin" dateformat="yyyy-MM-dd ddd"/>
+        <Calendar id="Calendar03" taborder="4" value="20140701" type="monthonly" left="410" top="43" width="156" height="191" dateformat="yyyy-MM-dd ddd"/>
+        <Calendar id="Calendar04" taborder="5" value="20140701" left="410" top="284" width="156" height="191" innerdataset="@ds_date" datecolumn="date" textcolorcolumn="color" dateformat="yyyy-MM-dd ddd" backgroundcolumn="bkcolor" type="monthonly" style="background:lightpink;" bordercolumn="bordercolor"/>
+        <Calendar id="Calendar05" taborder="6" value="20140701" left="30" top="201" width="200" height="30" dateformat="yyyy-MM-dd ddd"/>
+        <Calendar id="Calendar06" taborder="7" left="30" top="276" width="200" height="30" value="20140701" dateformat="yyyy-MM-dd ddd"/>
+        <Static id="Static00" taborder="8" text="1) Basic" left="20" top="20" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static01" taborder="9" text="2) Format" left="20" top="100" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static05" taborder="10" text="3) Today" left="20" top="172" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static06" taborder="11" text="4) Last Day" left="20" top="252" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static07" taborder="12" text="5) Type - Spin" left="20" top="331" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static02" taborder="13" text="6) Type - Month" left="400" top="20" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static03" taborder="14" text="7) Anniversary" left="400" top="260" width="150" height="20" style="font:bold 9 arial;"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_date" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="date" type="STRING" size="256"/>
+          <Column id="color" type="STRING" size="256"/>
+          <Column id="bkcolor" type="STRING" size="256"/>
+          <Column id="bordercolor" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="date">20140703</Col>
+            <Col id="color">blue</Col>
+            <Col id="bkcolor">lightpink</Col>
+            <Col id="bordercolor">1 solid red</Col>
+          </Row>
+          <Row>
+            <Col id="date">20140704</Col>
+            <Col id="color">red</Col>
+            <Col id="bkcolor">lightpink</Col>
+            <Col id="bordercolor">1 solid red</Col>
+          </Row>
+          <Row>
+            <Col id="date">20140710</Col>
+            <Col id="color">green</Col>
+            <Col id="bkcolor">lightpink</Col>
+            <Col id="bordercolor">1 solid red</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.comp_Calendar_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	this.Calendar05.set_value(this.fn_Today());
+	this.Calendar06.set_value(this.fn_LastDay(this.fn_Today()));
+}
+
+this.fn_Today = function()
+{
+	var objDate = new Date();
+	var sToday  = objDate.getFullYear().toString();
+	    sToday += (objDate.getMonth()+1).toString().padLeft(2, "0")
+	    sToday += objDate.getDate().toString().padLeft(2, "0"); 
+
+	return sToday;
+}
+
+this.fn_LastDay = function(sDate)
+{
+	var dDate = new Date(parseInt(sDate.substr(0,4))
+                       , parseInt(sDate.substr(4,2))
+                       , "01");
+	dDate = dDate.addDate(-1);
+	
+	var objDate  = new Date(dDate);
+    var sRtn =  objDate.getFullYear()
+             + (objDate.getMonth()+1).toString().padLeft(2, "0")
+             +  objDate.getDate().toString().padLeft(2, "0");               
+	
+	return sRtn;
+}]]></Script>
+  </Form>
+</FDL>

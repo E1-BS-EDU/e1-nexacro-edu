@@ -1,0 +1,35 @@
+spring.application.name=nexacro
+
+#spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+spring.datasource.driver-class-name=net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+#spring.datasource.url=jdbc:oracle:thin:@localhost:1521:orcl
+spring.datasource.url=jdbc:log4jdbc:oracle:thin:@localhost:1521:xe
+spring.datasource.username=c##scott
+spring.datasource.password=tiger
+
+mybatis.mapper-locations=classpath:mappers/**/*.xml
+mybatis.type-aliases-package=com.e1.nexacro.model
+mybatis.configuration.map-underscore-to-camel-case=false
+
+spring.main.allow-bean-definition-overriding=true
+
+spring.mvc.static-path-pattern=/static/**
+spring.mvc.view.prefix=/WEB-INF/jsp/
+spring.mvc.view.suffix=.jsp
+
+
+# HTTP ENCODING INFO
+spring.http.encoding.charset=UTF-8
+spring.http.encoding.enabled=true
+spring.http.encoding.force=true
+spring.http.encoding.force-response=true
+
+#spring.jpa.properties.hibernate.format_sql=true
+logging:level:jdbc.sqlonly: DEBUG
+logging.level.jdbc=off
+logging.level.jdbc.sqlonly=off
+logging.level.jdbc.sqltiming=info
+logging.level.jdbc.resultsettable=off
+logging.level.jdbc.audit=off
+logging.level.jdbc.resultset=off
+logging.level.jdbc.connection=off

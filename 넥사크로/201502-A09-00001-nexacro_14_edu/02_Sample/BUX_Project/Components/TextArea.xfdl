@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="comp_TextArea" classname="comp_Button" inheritanceid="" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <TextArea id="TextArea00" taborder="1" left="30" top="50" width="300" height="102" value="nexacro platform&#13;&#10;nexacro platform&#13;&#10;nexacro platform&#13;&#10;nexacro platform&#13;&#10;nexacro platform"/>
+        <Static id="Static05" taborder="2" text="1) Basic" left="20" top="20" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static01" taborder="3" text="2) Max Length - 50" left="20" top="172" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static02" taborder="4" text="3) Auto Select" left="20" top="268" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static03" taborder="5" text="4) Input Type - english" left="20" top="356" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static08" taborder="8" text="5) Input Filter - digit" left="20" top="446" width="150" height="20" style="font:bold 9 arial;"/>
+        <TextArea id="TextArea01" taborder="10" value="nexacro platform&#13;&#10;nexacro platform" left="30" top="202" width="300" height="46" maxlength="50" autoskip="true"/>
+        <TextArea id="TextArea02" taborder="11" value="nexacro platform&#13;&#10;nexacro platform" left="30" top="290" width="300" height="46" autoselect="true"/>
+        <TextArea id="TextArea03" taborder="12" value="nexacro platform&#13;&#10;nexacro platform" left="30" top="378" width="300" height="46" inputtype="english"/>
+        <TextArea id="TextArea04" taborder="13" value="nexacro platform&#13;&#10;nexacro platform" autoselect="true" left="30" top="468" width="300" height="46" inputfilter="digit"/>
+        <TextArea id="TextArea05" taborder="14" value="nexacro platform&#13;&#10;nexacro platform" autoselect="true" left="30" top="556" width="300" height="46" inputmode="upper"/>
+        <Static id="Static00" taborder="15" text="6) Inputmode - upper" left="20" top="534" width="150" height="20" style="font:bold 9 arial;"/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

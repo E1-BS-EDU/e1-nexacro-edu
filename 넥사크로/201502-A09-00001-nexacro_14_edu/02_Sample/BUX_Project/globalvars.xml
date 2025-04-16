@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GlobalVariables>
+  <Variable id="gvUserID" initval="AA001"/>
+  <Dataset id="gds_menu">
+    <ColumnInfo>
+      <Column id="m_id" type="STRING" size="256"/>
+      <Column id="m_nm" type="STRING" size="256"/>
+      <Column id="m_lv" type="STRING" size="256"/>
+      <Column id="m_st" type="STRING" size="256"/>
+      <Column id="m_ui" type="STRING" size="256"/>
+    </ColumnInfo>
+    <Rows>
+      <Row>
+        <Col id="m_id">1</Col>
+        <Col id="m_nm">Main1</Col>
+        <Col id="m_lv">0</Col>
+        <Col id="m_st">1</Col>
+      </Row>
+      <Row>
+        <Col id="m_id">1-1</Col>
+        <Col id="m_nm">Sub1</Col>
+        <Col id="m_lv">1</Col>
+        <Col id="m_st">1</Col>
+      </Row>
+      <Row>
+        <Col id="m_id">1-1-1</Col>
+        <Col id="m_nm">Leaf1</Col>
+        <Col id="m_lv">2</Col>
+        <Col id="m_st">1</Col>
+        <Col id="m_ui">Basic1::SaveEMP1.xfdl</Col>
+      </Row>
+      <Row>
+        <Col id="m_id">1-1-2</Col>
+        <Col id="m_nm">Leaf2</Col>
+        <Col id="m_lv">2</Col>
+        <Col id="m_st">1</Col>
+        <Col id="m_ui">Basic1::SaveEMP2.xfdl</Col>
+      </Row>
+      <Row>
+        <Col id="m_id">2</Col>
+        <Col id="m_nm">Main2</Col>
+        <Col id="m_lv">0</Col>
+        <Col id="m_st">1</Col>
+      </Row>
+      <Row>
+        <Col id="m_id">2-1</Col>
+        <Col id="m_nm">Sub2</Col>
+        <Col id="m_lv">1</Col>
+        <Col id="m_st">1</Col>
+      </Row>
+      <Row>
+        <Col id="m_id">2-1-2</Col>
+        <Col id="m_nm">Leaf3</Col>
+        <Col id="m_lv">2</Col>
+        <Col id="m_st">1</Col>
+        <Col id="m_ui">Basic1::SelectEMP.xfdl</Col>
+      </Row>
+    </Rows>
+  </Dataset>
+  <Images>
+    <Image id="img_delete" url="Images::img_delete.png"/>
+    <Image id="img_new" url="Images::img_new.png"/>
+    <Image id="img_save" url="Images::img_save.png"/>
+    <Image id="nexacro_platform" url="Images::nexacro_platform.png"/>
+  </Images>
+</GlobalVariables>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="Debugging" classname="Debugging" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Button id="Button00" taborder="0" text="alert" left="83" top="64" width="125" height="47" onclick="Button00_onclick"/>
+        <Button id="Button01" taborder="1" text="trace" left="253" top="64" width="125" height="47" onclick="Button01_onclick"/>
+        <Button id="Button02" taborder="2" text="line debugging" left="423" top="64" width="125" height="47" onclick="Button02_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var sTest1="Test Alert!";
+	
+	this.alert(sTest1);
+}
+
+this.Button01_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var sTest2="Test Alert!";
+
+	trace(sTest2);
+}
+
+this.Button02_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var iTest=0;
+	
+	iTest=iTest+1;
+	iTest=iTest+1;
+	iTest=iTest+1;
+	
+	var iRtn=this.fn_debug(iTest);
+	
+	iTest=iRtn+1;
+	iTest=iTest+1;
+	
+}
+
+this.fn_debug=function(i)
+{
+	i=i*10
+	
+	return i;
+}
+
+
+
+
+
+
+]]></Script>
+  </Form>
+</FDL>

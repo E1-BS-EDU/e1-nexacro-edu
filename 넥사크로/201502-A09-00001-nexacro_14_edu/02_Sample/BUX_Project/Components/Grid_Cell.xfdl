@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="comp_Grid_Cell" classname="comp_Button" inheritanceid="" left="0" top="0" width="1024" height="949" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Grid id="Grid00" taborder="2" useinputpanel="false" left="30" top="50" width="800" height="123" binddataset="ds_display" oncellclick="Grid00_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="normal"/>
+                <Cell col="1" text="text"/>
+                <Cell col="2" text="number"/>
+                <Cell col="3" text="date"/>
+                <Cell col="4" text="combo"/>
+                <Cell col="5" text="checkbox"/>
+                <Cell col="6" text="bar"/>
+                <Cell col="7" text="image"/>
+                <Cell col="8" text="button"/>
+                <Cell col="9" text="none"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:EMPL_ID"/>
+                <Cell col="1" displaytype="text" text="bind:FULL_NAME"/>
+                <Cell col="2" displaytype="number" text="bind:SALARY"/>
+                <Cell col="3" displaytype="date" text="bind:HIRE_DATE"/>
+                <Cell col="4" displaytype="combo" text="bind:DEPT_ID" combodataset="ds_dept" combocodecol="code" combodatacol="text"/>
+                <Cell col="5" displaytype="checkbox" text="bind:MARRIED"/>
+                <Cell col="6" displaytype="bar" text="bind:BAR"/>
+                <Cell col="7" displaytype="image" text="bind:IMAGE"/>
+                <Cell col="8" displaytype="button" style="controlcolor:#333333ff;" text="click"/>
+                <Cell col="9" displaytype="none" text="bind:FULL_NAME"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static01" taborder="3" text="1) displattype" left="20" top="20" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static00" taborder="4" text="2) edittype" left="20" top="196" width="150" height="20" style="font:bold 9 arial;"/>
+        <Grid id="Grid02" taborder="5" binddataset="ds_edit" useinputpanel="false" left="30" top="218" width="800" height="123">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="100"/>
+                <Column size="120"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="100"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="none"/>
+                <Cell col="1" text="text"/>
+                <Cell col="2" text="textarea"/>
+                <Cell col="3" text="date"/>
+                <Cell col="4" text="mask"/>
+                <Cell col="5" text="masknum"/>
+                <Cell col="6" text="combo"/>
+                <Cell col="7" text="checkbox"/>
+                <Cell col="8" text="button"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:FULL_NAME"/>
+                <Cell col="1" displaytype="text" edittype="text" text="bind:FULL_NAME"/>
+                <Cell col="2" edittype="textarea" text="bind:EMPL_MEMO"/>
+                <Cell col="3" displaytype="date" edittype="date" text="bind:HIRE_DATE" calendardisplay="display"/>
+                <Cell col="4" edittype="mask" text="bind:EMPL_ID" mask="AA-###"/>
+                <Cell col="5" displaytype="number" edittype="masknumber" text="bind:SALARY" mask="#,###"/>
+                <Cell col="6" displaytype="combo" edittype="combo" text="bind:DEPT_ID" combodataset="ds_dept" combocodecol="code" combodatacol="text" combodisplay="display"/>
+                <Cell col="7" displaytype="checkbox" edittype="checkbox" text="bind:MARRIED"/>
+                <Cell col="8" displaytype="button" edittype="button" style="controlcolor:#333333ff;" text="click"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static02" taborder="6" text="3) expand, Merge cells" left="20" top="364" width="150" height="20" style="font:bold 9 arial;"/>
+        <Grid id="Grid01" taborder="7" binddataset="ds_edit" useinputpanel="false" left="30" top="386" width="640" height="147" onexpandup="Grid01_onexpandup" oncellclick="Grid01_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="120"/>
+                <Column size="25"/>
+                <Column size="50"/>
+                <Column size="25"/>
+                <Column size="60"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="ID"/>
+                <Cell col="1" rowspan="2" text="Name"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+                <Cell col="4" rowspan="2" colspan="4" text="Gender"/>
+                <Cell row="1"/>
+                <Cell row="1" col="2" colspan="2">
+                  <Cell text="Dept"/>
+                  <Cell col="1" text="HireDate"/>
+                </Cell>
+              </Band>
+              <Band id="body">
+                <Cell edittype="mask" text="bind:EMPL_ID" mask="AA-###" expandshow="show" expandsize="19" expandimage="URL('Images::img_search.png')"/>
+                <Cell col="1" displaytype="text" edittype="text" text="bind:FULL_NAME"/>
+                <Cell col="2" displaytype="combo" edittype="combo" text="bind:DEPT_ID" combodataset="ds_dept" combocodecol="code" combodatacol="text" combodisplay="display"/>
+                <Cell col="3" displaytype="date" edittype="date" style="selectcolor: ;" text="bind:HIRE_DATE" calendardisplay="display"/>
+                <Cell col="4" colspan="4" style="selectbackground:white;selectcolor:black;">
+                  <Cell displaytype="image" style="align:right;" text="expr:GENDER == &quot;M&quot; ? &quot;Images::radio_n.png&quot; : &quot;Images::radio_d.png&quot;"/>
+                  <Cell col="1" style="selectcolor:#6e6e63ff;" text="Male"/>
+                  <Cell col="2" displaytype="image" style="align:right;" text="expr:GENDER == &quot;M&quot; ? &quot;Images::radio_d.png&quot; : &quot;Images::radio_n.png&quot;"/>
+                  <Cell col="3" style="selectcolor:#6e6e63ff;" text="Female"/>
+                </Cell>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static03" taborder="8" text="4) setCellProperty" left="20" top="556" width="150" height="20" style="font:bold 9 arial;"/>
+        <Button id="Button00" taborder="9" text="Set" onclick="Button00_onclick" left="30" top="584" width="100" height="30"/>
+        <Button id="Button01" taborder="10" text="Default" onclick="Button01_onclick" left="134" top="584" width="100" height="30"/>
+        <Static id="Static05" taborder="14" text="5) Expression" left="20" top="636" width="150" height="20" style="font:bold 9 arial;"/>
+        <Grid id="Grid03" taborder="15" binddataset="ds_emp" autoenter="select" useinputpanel="false" left="30" top="662" width="813" height="182">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="40"/>
+                <Column size="60"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="102"/>
+                <Column size="63"/>
+                <Column size="80"/>
+                <Column size="87"/>
+                <Column size="180"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+                <Row size="24" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell rowspan="2"/>
+                <Cell col="1" colspan="2" text="expr:comp.parent.sFormValue"/>
+                <Cell col="3" rowspan="2" text="Dept"/>
+                <Cell col="4" rowspan="2" text="HireDate"/>
+                <Cell col="5" rowspan="2" text="Gender"/>
+                <Cell col="6" rowspan="2" text="Married"/>
+                <Cell col="7" rowspan="2" text="Salary"/>
+                <Cell col="8" rowspan="2" text="Memo"/>
+                <Cell row="1" col="1" text="ID"/>
+                <Cell row="1" col="2" text="Name"/>
+              </Band>
+              <Band id="body">
+                <Cell celltype="head" style="align:center;background2: ;" text="expr:(dataset.rowposition == currow ? &quot;☞&quot; : currow+1)"/>
+                <Cell col="1" style="align:center;color:EXPR(GENDER=='W' ? 'blue' : 'red' );color2:EXPR(GENDER=='W' ? 'blue' : 'red' );" text="bind:EMPL_ID" mask="AA-###"/>
+                <Cell col="2" style="color:EXPR(GENDER=='W' ? 'blue' : 'red' );color2:EXPR(GENDER=='W' ? 'blue' : 'red' );" text="bind:FULL_NAME"/>
+                <Cell col="3" displaytype="combo" edittype="combo" text="bind:DEPT_ID" combodataset="ds_dept" combocodecol="code" combodatacol="text" combodisplay="edit"/>
+                <Cell col="4" text="bind:HIRE_DATE"/>
+                <Cell col="5" text="expr:GENDER=='W' ? 'Female' : 'Male'"/>
+                <Cell col="6" displaytype="checkbox" edittype="checkbox" text="bind:MARRIED"/>
+                <Cell col="7" style="align:right;" text="bind:SALARY"/>
+                <Cell col="8" text="bind:EMPL_MEMO"/>
+              </Band>
+              <Band id="summary">
+                <Cell/>
+                <Cell col="1" colspan="2" style="align:center;" text="expr:'Total : '+comp.parent.ds_emp. getRowCount()"/>
+                <Cell col="3" text="expr:comp.parent.fn_expr()"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+                <Cell col="6"/>
+                <Cell col="7" displaytype="number" text="expr:comp.parent.ds_emp.getSum('SALARY')"/>
+                <Cell col="8"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_display" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="EMPL_ID" type="STRING" size="5"/>
+          <Column id="FULL_NAME" type="STRING" size="10"/>
+          <Column id="DEPT_ID" type="STRING" size="2"/>
+          <Column id="HIRE_DATE" type="DATE" size="8"/>
+          <Column id="GENDER" type="STRING" size="1"/>
+          <Column id="MARRIED" type="STRING" size="1"/>
+          <Column id="SALARY" type="INT" size="10"/>
+          <Column id="EMPL_MEMO" type="STRING" size="500"/>
+          <Column id="BAR" type="STRING" size="256"/>
+          <Column id="IMAGE" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="EMPL_ID">AA001</Col>
+            <Col id="FULL_NAME">ShinSoo Choo</Col>
+            <Col id="DEPT_ID">01</Col>
+            <Col id="HIRE_DATE">20011104</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">1</Col>
+            <Col id="SALARY">2000</Col>
+            <Col id="EMPL_MEMO">baseball</Col>
+            <Col id="BAR">10</Col>
+            <Col id="IMAGE">img_new</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">BB001</Col>
+            <Col id="FULL_NAME">Yuna Kim</Col>
+            <Col id="DEPT_ID">02</Col>
+            <Col id="HIRE_DATE">20050305</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">3000</Col>
+            <Col id="EMPL_MEMO">figure skating</Col>
+            <Col id="BAR">30</Col>
+            <Col id="IMAGE">img_save</Col>
+          </Row>
+          <Row>
+            <Col id="FULL_NAME">Sumi Jo</Col>
+            <Col id="EMPL_ID">CC001</Col>
+            <Col id="DEPT_ID">03</Col>
+            <Col id="HIRE_DATE">20100506</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">5000</Col>
+            <Col id="EMPL_MEMO">singer</Col>
+            <Col id="BAR">60</Col>
+            <Col id="IMAGE">img_delete</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">DD001</Col>
+            <Col id="FULL_NAME">JS Park</Col>
+            <Col id="DEPT_ID">04</Col>
+            <Col id="HIRE_DATE">20101123</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">3500</Col>
+            <Col id="EMPL_MEMO">soccer</Col>
+            <Col id="BAR">90</Col>
+            <Col id="IMAGE">Images::img_search.png</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_dept" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="text" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">01</Col>
+            <Col id="text">Sales</Col>
+          </Row>
+          <Row>
+            <Col id="code">02</Col>
+            <Col id="text">IT</Col>
+          </Row>
+          <Row>
+            <Col id="code">03</Col>
+            <Col id="text">Education</Col>
+          </Row>
+          <Row>
+            <Col id="code">04</Col>
+            <Col id="text">Marketing</Col>
+          </Row>
+          <Row>
+            <Col id="code">05</Col>
+            <Col id="text">HR</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_edit" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="EMPL_ID" type="STRING" size="5"/>
+          <Column id="FULL_NAME" type="STRING" size="10"/>
+          <Column id="DEPT_ID" type="STRING" size="2"/>
+          <Column id="HIRE_DATE" type="DATE" size="8"/>
+          <Column id="GENDER" type="STRING" size="1"/>
+          <Column id="MARRIED" type="STRING" size="1"/>
+          <Column id="SALARY" type="INT" size="10"/>
+          <Column id="EMPL_MEMO" type="STRING" size="500"/>
+          <Column id="BAR" type="STRING" size="256"/>
+          <Column id="IMAGE" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="EMPL_ID">AA001</Col>
+            <Col id="FULL_NAME">ShinSoo Choo</Col>
+            <Col id="DEPT_ID">01</Col>
+            <Col id="HIRE_DATE">20011104</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">1</Col>
+            <Col id="SALARY">2000</Col>
+            <Col id="EMPL_MEMO">baseball</Col>
+            <Col id="BAR">10</Col>
+            <Col id="IMAGE">img_new</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">BB001</Col>
+            <Col id="FULL_NAME">Yuna Kim</Col>
+            <Col id="DEPT_ID">02</Col>
+            <Col id="HIRE_DATE">20050305</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">3000</Col>
+            <Col id="EMPL_MEMO">figure skating</Col>
+            <Col id="BAR">30</Col>
+            <Col id="IMAGE">img_save</Col>
+          </Row>
+          <Row>
+            <Col id="FULL_NAME">Sumi Jo</Col>
+            <Col id="EMPL_ID">CC001</Col>
+            <Col id="DEPT_ID">03</Col>
+            <Col id="HIRE_DATE">20100506</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">5000</Col>
+            <Col id="EMPL_MEMO">singer</Col>
+            <Col id="BAR">60</Col>
+            <Col id="IMAGE">img_delete</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">DD001</Col>
+            <Col id="FULL_NAME">JS Park</Col>
+            <Col id="DEPT_ID">04</Col>
+            <Col id="HIRE_DATE">20101123</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">3500</Col>
+            <Col id="EMPL_MEMO">soccer</Col>
+            <Col id="BAR">90</Col>
+            <Col id="IMAGE">Images::img_search.png</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_emp" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="EMPL_ID" type="STRING" size="5"/>
+          <Column id="FULL_NAME" type="STRING" size="10"/>
+          <Column id="DEPT_ID" type="STRING" size="2"/>
+          <Column id="HIRE_DATE" type="DATE" size="8"/>
+          <Column id="GENDER" type="STRING" size="1"/>
+          <Column id="MARRIED" type="STRING" size="1"/>
+          <Column id="SALARY" type="INT" size="10"/>
+          <Column id="EMPL_MEMO" type="STRING" size="500"/>
+          <Column id="IMAGE" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="EMPL_ID">AA001</Col>
+            <Col id="FULL_NAME">ShinSoo Choo</Col>
+            <Col id="DEPT_ID">01</Col>
+            <Col id="HIRE_DATE">20011104</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">1</Col>
+            <Col id="SALARY">2000</Col>
+            <Col id="EMPL_MEMO">baseball</Col>
+            <Col id="IMAGE">img_new</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">BB001</Col>
+            <Col id="FULL_NAME">Yuna Kim</Col>
+            <Col id="DEPT_ID">02</Col>
+            <Col id="HIRE_DATE">20050305</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">3000</Col>
+            <Col id="EMPL_MEMO">figure skating</Col>
+            <Col id="IMAGE"/>
+          </Row>
+          <Row>
+            <Col id="FULL_NAME">Sumi Jo</Col>
+            <Col id="EMPL_ID">CC001</Col>
+            <Col id="DEPT_ID">03</Col>
+            <Col id="HIRE_DATE">20100506</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">5000</Col>
+            <Col id="EMPL_MEMO">singer</Col>
+            <Col id="IMAGE">img_new</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">DD001</Col>
+            <Col id="FULL_NAME">JS Park</Col>
+            <Col id="DEPT_ID">04</Col>
+            <Col id="HIRE_DATE">20101123</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">3500</Col>
+            <Col id="EMPL_MEMO">soccer</Col>
+            <Col id="IMAGE"/>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.Grid01_onexpandup = function(obj:Grid, e:nexacro.GridMouseEventInfo)
+{
+	this.alert("pop");
+}
+
+this.Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.Grid01.setCellProperty("body", 2, "displaytype", "normal");
+	this.Grid01.setCellProperty("body", 3, "calendardisplay", "edit");
+}
+
+this.Button01_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.Grid01.setCellProperty("body", 2, "displaytype", "combo");
+	this.Grid01.setCellProperty("body", 3, "calendardisplay", "display");
+}
+
+
+this.sFormValue="TOBESOFT";
+this.fn_expr = function()
+{
+	var i=0;
+	
+	return this.sFormValue+" : " + this.ds_emp.getRowCount();
+}
+
+this.Grid01_oncellclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	if(e.cell == 4)
+	{
+		var sVal = this.ds_edit.getColumn(e.row, "GENDER");
+		if(sVal == "W" && e.col == 4)
+		{
+			this.ds_edit.setColumn(e.row, "GENDER", "M");	
+		}
+		else if(sVal == "M" && e.col == 6)
+		{
+			this.ds_edit.setColumn(e.row, "GENDER", "W");	
+		}
+	}
+}
+]]></Script>
+  </Form>
+</FDL>

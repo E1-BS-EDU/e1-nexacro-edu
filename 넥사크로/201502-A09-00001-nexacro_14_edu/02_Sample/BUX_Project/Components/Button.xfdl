@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="comp_Button" classname="comp_Button" inheritanceid="" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Button id="Button00" taborder="0" text="Button" left="30" top="50" width="150" height="40" onclick="Button00_onclick"/>
+        <Static id="Static00" text="1) Basic" left="20" top="20" width="150" height="20" style="font:bold 9 arial;"/>
+        <Button id="Button01" taborder="1" text="enabled" left="30" top="139" width="150" height="44"/>
+        <Button id="Button02" taborder="2" text="disabled" left="30" top="187" width="150" height="44" enable="false"/>
+        <Button id="Button03" taborder="3" text="mouseover" left="30" top="235" width="150" height="44" style=":mouseover {background:lightblue;}"/>
+        <Button id="Button04" taborder="4" text="pushed" left="190" top="139" width="150" height="44" style=":pushed {background:khaki;font:14 arial;}"/>
+        <Button id="Button05" taborder="5" text="selected" left="190" top="235" width="150" height="44" style=":selected {background:lightgreen;}" onclick="Button05_onclick"/>
+        <Static id="Static02" taborder="8" text="2) Pseudo" left="20" top="108" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static01" taborder="9" text="3) expr" left="20" top="308" width="150" height="20" style="font:bold 9 arial;"/>
+        <Button id="Button08" taborder="10" text="Button08" left="30" top="334" width="150" height="44" expr="expr:comp.parent.Static00.text + &quot; &quot; + comp.parent.Button00.text"/>
+        <Button id="Button06" taborder="11" text="Button08" expr="expr:comp.parent.expr_result()" left="30" top="382" width="150" height="44"/>
+        <Button id="Button07" taborder="12" text="focused" left="190" top="187" width="150" height="44" style=":focused {background:lightpink;}"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_employees" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false" onload="ds_employees_onload">
+        <ColumnInfo>
+          <Column id="EMPL_ID" type="STRING" size="5"/>
+          <Column id="FULL_NAME" type="STRING" size="10"/>
+          <Column id="DEPT_ID" type="STRING" size="2"/>
+          <Column id="HIRE_DATE" type="DATE" size="8"/>
+          <Column id="GENDER" type="STRING" size="1"/>
+          <Column id="MARRIED" type="STRING" size="1"/>
+          <Column id="SALARY" type="INT" size="10"/>
+          <Column id="EMPL_MEMO" type="STRING" size="500"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="EMPL_ID">AA001</Col>
+            <Col id="FULL_NAME">ShinSoo Choo</Col>
+            <Col id="DEPT_ID">01</Col>
+            <Col id="HIRE_DATE">20011104</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">1</Col>
+            <Col id="SALARY">2000</Col>
+            <Col id="EMPL_MEMO">baseball</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">BB001</Col>
+            <Col id="FULL_NAME">Yuna Kim</Col>
+            <Col id="DEPT_ID">02</Col>
+            <Col id="HIRE_DATE">20050305</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">3000</Col>
+            <Col id="EMPL_MEMO">figure skating</Col>
+          </Row>
+          <Row>
+            <Col id="FULL_NAME">Sumi Jo</Col>
+            <Col id="EMPL_ID">CC001</Col>
+            <Col id="DEPT_ID">03</Col>
+            <Col id="HIRE_DATE">20100506</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">5000</Col>
+            <Col id="EMPL_MEMO">singer</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">DD001</Col>
+            <Col id="FULL_NAME">JS Park</Col>
+            <Col id="DEPT_ID">04</Col>
+            <Col id="HIRE_DATE">20101123</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">3500</Col>
+            <Col id="EMPL_MEMO">soccer</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Button08" propid="text" datasetid="ds_employees" columnid="FULL_NAME"/>
+      <BindItem id="item1" compid="Button06" propid="text" datasetid="ds_employees" columnid="FULL_NAME"/>
+    </Bind>
+    <Script type="xscript5.0"><![CDATA[
+this.Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.alert(obj.id+" Click!");
+}
+
+this.Button05_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	obj.setSelectStatus(true);
+}
+
+this.expr_result = function()
+{
+     return "Return ABC";
+}
+]]></Script>
+  </Form>
+</FDL>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="test1" left="0" top="0" width="1024" height="768" titletext="Test Form">
+    <Layouts>
+      <Layout>
+        <Button id="Button00" taborder="0" text="Button00" left="20.41%" top="74" right="39.16%" height="136" onclick="Button00_onclick"/>
+        <Button id="Button01" taborder="1" text="Button01" left="19.24%" top="250" right="38.38%" height="135" onclick="Button01_onclick"/>
+        <Button id="Button02" taborder="2" text="Button02" left="4.88%" top="165" right="82.81%" height="102"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.Button00_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	alert("@");
+}
+
+this.Button01_onclick = function(obj:Button, e:nexacro.ClickEventInfo)
+{
+	this.go("Main::test2.xfdl");
+}
+]]></Script>
+  </Form>
+</FDL>

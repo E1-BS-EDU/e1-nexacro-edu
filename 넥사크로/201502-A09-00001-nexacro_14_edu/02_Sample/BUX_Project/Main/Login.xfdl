@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="Login" classname="Login" inheritanceid="" left="0" top="0" width="800" height="600" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Div id="Div00" taborder="2" left="34.25%" top="39.5%" position="absolute" style="border:0 solid #808080ff ;" width="260" height="90">
+          <Layouts>
+            <Layout>
+              <Edit id="Edit00" taborder="0" left="92" top="12" height="27" value="admin" style="align:center middle;" width="104"/>
+              <Static id="stcTitle" text="ID" left="7" top="11" width="83" height="27" style="background:#d1cec9ff;align:center middle;"/>
+              <Static id="stcTitle00" text="Password" left="7" top="48" width="83" height="27" style="background:#d1cec9ff;align:center middle;"/>
+              <Button id="Button00" taborder="2" text="OK" left="197" top="48" width="52" height="27" onclick="Div00_Button00_onclick"/>
+              <MaskEdit id="MaskEdit00" taborder="3" left="92" top="48" width="104" height="27" type="string" mask="AAAA-{####}" value="TOBE1234" style="align:center middle;"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.Div00_Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	/*
+	// Login transaction
+	this.transaction("trLogin"
+                    ,"http://login_address"
+	                ,""
+	                ," 
+	                ,""
+	                ,"fn_callback");
+    */
+	
+	this.fn_callback();
+}
+
+
+this.fn_callback=function(trID, nErrCD, sErrMSG)
+{
+	/*
+	// Login callback
+	if (nErrCD < 0)
+	{
+		this.alert("Fain Login:"+sErrMSG);
+	}
+	else
+	{
+	    this.alert("Success Login");
+	}
+	*/
+	
+	application.mainframe.childframe.set_formurl("Main::MainContents.xfdl");
+}
+]]></Script>
+  </Form>
+</FDL>

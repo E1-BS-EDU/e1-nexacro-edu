@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ADL version="1.2">
+  <TypeDefinition url="default_typedef.xml"/>
+  <GlobalVariables url="globalvars.xml"/>
+  <Application id="BUX_Project" codepage="utf-8" language="Korean" loginformurl="" loginformstyle="" windowopeneffect="" windowcloseeffect="" version="" tracemode="" themeid="default.xtheme">
+    <Layout>
+      <MainFrame id="mainframe" title="maintitle" defaultfont="" resizable="true" showtitlebar="true" showstatusbar="true" left="0" top="0" width="1024" height="768">
+        <ChildFrame id="childframe" formurl="Main::MainContents.xfdl" showtitlebar="false" showstatusbar="false" openeffect="" closeeffect=""/>
+      </MainFrame>
+    </Layout>
+    <ScreenInfo>
+      <Screen name="sc_desktop" type="desktop" screenwidth="800" sizeorientation="landscape" autozoom="true" themeid="default.xtheme" formlayoutwidth="0" formlayoutheight="0"/>
+      <Screen name="sc_phone" type="phone" screenwidth="720" sizeorientation="portrait" autozoom="true" themeid="nexacro_mobile.xtheme" formlayoutwidth="0" formlayoutheight="0"/>
+    </ScreenInfo>
+  </Application>
+  <Script type="xscript5.0"><![CDATA[// TOBE = nexacro; 
+
+this.gfn_globalFunction=function(sArg)
+{
+	var sRtn="Global Function is called!";
+	return sRtn;
+}]]></Script>
+</ADL>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.e1.nexacro.mapper.testMapper">
+    <select id="getTest"  parameterType="testModel" resultType="testModel">
+        SELECT   EMPLOYEE_ID
+        		,FIRST_NAME
+        		,LAST_NAME
+        		,EMAIL
+        		,PHONE
+        		,HIRE_DATE
+        		,MANAGER_ID
+        		,JOB_TITLE
+          FROM EMPLOYEES
+    </select>
+    
+    <select id="searchList"  parameterType="java.util.Map" resultType="java.util.LinkedHashMap">
+        SELECT   EMPLOYEE_ID
+        		,FIRST_NAME
+        		,LAST_NAME
+        		,EMAIL
+        		,PHONE
+        		,HIRE_DATE
+        		,MANAGER_ID
+        		,JOB_TITLE
+          FROM EMPLOYEES
+          WHERE EMPLOYEE_ID = #{EMP_ID}
+    </select>
+</mapper>

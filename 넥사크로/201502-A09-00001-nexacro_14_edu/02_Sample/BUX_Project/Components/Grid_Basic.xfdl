@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="comp_Grid_Basic" classname="comp_Button" inheritanceid="" left="0" top="0" width="1024" height="1092" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Grid id="Grid00" taborder="1" useinputpanel="false" left="30" top="50" width="713" height="122" binddataset="ds_emp">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row band="body" size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell col="0" disptype="normal" text="EMPL_ID"/>
+                <Cell col="1" disptype="normal" text="FULL_NAME"/>
+                <Cell col="2" disptype="normal" text="DEPT_ID"/>
+                <Cell col="3" disptype="normal" text="HIRE_DATE"/>
+                <Cell col="4" disptype="normal" text="GENDER"/>
+                <Cell col="5" disptype="normal" text="MARRIED"/>
+                <Cell col="6" disptype="normal" text="SALARY"/>
+                <Cell col="7" disptype="normal" text="EMPL_MEMO"/>
+              </Band>
+              <Band id="body">
+                <Cell col="0" disptype="normal" text="bind:EMPL_ID"/>
+                <Cell col="1" disptype="normal" text="bind:FULL_NAME"/>
+                <Cell col="2" disptype="normal" text="bind:DEPT_ID"/>
+                <Cell col="3" disptype="normal" text="bind:HIRE_DATE"/>
+                <Cell col="4" disptype="normal" text="bind:GENDER"/>
+                <Cell col="5" disptype="normal" text="bind:MARRIED"/>
+                <Cell col="6" disptype="normal" text="bind:SALARY"/>
+                <Cell col="7" disptype="normal" text="bind:EMPL_MEMO"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static01" taborder="2" text="1) Basic" left="20" top="20" width="150" height="20" style="font:bold 9 arial;"/>
+        <Static id="Static00" taborder="3" text="2) autofit, cellsizing, cellmoving" left="20" top="196" width="300" height="20" style="font:bold 9 arial;"/>
+        <Grid id="Grid01" taborder="4" binddataset="ds_emp" useinputpanel="false" left="30" top="218" width="713" height="122" autofittype="col" cellmovingtype="col" cellsizingtype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row band="body" size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell col="0" disptype="normal" text="EMPL_ID"/>
+                <Cell col="1" disptype="normal" text="FULL_NAME"/>
+                <Cell col="2" disptype="normal" text="DEPT_ID"/>
+                <Cell col="3" disptype="normal" text="HIRE_DATE"/>
+                <Cell col="4" disptype="normal" text="GENDER"/>
+                <Cell col="5" disptype="normal" text="MARRIED"/>
+                <Cell col="6" disptype="normal" text="SALARY"/>
+                <Cell col="7" disptype="normal" text="EMPL_MEMO"/>
+              </Band>
+              <Band id="body">
+                <Cell col="0" disptype="normal" text="bind:EMPL_ID"/>
+                <Cell col="1" disptype="normal" text="bind:FULL_NAME"/>
+                <Cell col="2" disptype="normal" text="bind:DEPT_ID"/>
+                <Cell col="3" disptype="normal" text="bind:HIRE_DATE"/>
+                <Cell col="4" disptype="normal" text="bind:GENDER"/>
+                <Cell col="5" disptype="normal" text="bind:MARRIED"/>
+                <Cell col="6" disptype="normal" text="bind:SALARY"/>
+                <Cell col="7" disptype="normal" text="bind:EMPL_MEMO"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static02" taborder="5" text="3) column fix" left="20" top="364" width="420" height="20" style="font:bold 9 arial;"/>
+        <Grid id="Grid02" taborder="6" binddataset="ds_emp" useinputpanel="false" left="30" top="386" width="481" height="136">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80" band="left"/>
+                <Column size="80" band="left"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="EMPL_ID"/>
+                <Cell col="1" text="FULL_NAME"/>
+                <Cell col="2" text="DEPT_ID"/>
+                <Cell col="3" text="HIRE_DATE"/>
+                <Cell col="4" text="GENDER"/>
+                <Cell col="5" text="MARRIED"/>
+                <Cell col="6" text="SALARY"/>
+                <Cell col="7" text="EMPL_MEMO"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:EMPL_ID"/>
+                <Cell col="1" text="bind:FULL_NAME"/>
+                <Cell col="2" text="bind:DEPT_ID"/>
+                <Cell col="3" text="bind:HIRE_DATE"/>
+                <Cell col="4" text="bind:GENDER"/>
+                <Cell col="5" text="bind:MARRIED"/>
+                <Cell col="6" text="bind:SALARY"/>
+                <Cell col="7" text="bind:EMPL_MEMO"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static03" taborder="10" text="4) selecttype - multirow" left="20" top="540" width="420" height="20" style="font:bold 9 arial;"/>
+        <Grid id="Grid04" taborder="11" binddataset="ds_emp" useinputpanel="false" left="30" top="562" width="320" height="123" selecttype="multirow">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="EMPL_ID"/>
+                <Cell col="1" text="FULL_NAME"/>
+                <Cell col="2" text="DEPT_ID"/>
+                <Cell col="3" text="HIRE_DATE"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:EMPL_ID"/>
+                <Cell col="1" text="bind:FULL_NAME"/>
+                <Cell col="2" text="bind:DEPT_ID"/>
+                <Cell col="3" text="bind:HIRE_DATE"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button01" taborder="13" text="get" onclick="Button01_onclick" left="299" top="535" width="51" height="24"/>
+        <Static id="Static04" taborder="14" text="selecttype - area" left="380" top="540" width="236" height="20" style="font:bold 9 arial;"/>
+        <Grid id="Grid05" taborder="15" binddataset="ds_emp" useinputpanel="false" selecttype="area" left="382" top="562" width="320" height="123">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="EMPL_ID"/>
+                <Cell col="1" text="FULL_NAME"/>
+                <Cell col="2" text="DEPT_ID"/>
+                <Cell col="3" text="HIRE_DATE"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:EMPL_ID"/>
+                <Cell col="1" text="bind:FULL_NAME"/>
+                <Cell col="2" text="bind:DEPT_ID"/>
+                <Cell col="3" text="bind:HIRE_DATE"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button02" taborder="16" text="get" onclick="Button02_onclick" left="651" top="535" width="51" height="24"/>
+        <Grid id="Grid03" taborder="17" binddataset="ds_emp" useinputpanel="false" left="30" top="760" width="640" height="123">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="75"/>
+                <Column size="75"/>
+                <Column size="75"/>
+                <Column size="75"/>
+                <Column size="75"/>
+                <Column size="75"/>
+                <Column size="75"/>
+                <Column size="75"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="EMPL_ID"/>
+                <Cell col="1" text="FULL_NAME"/>
+                <Cell col="2" text="DEPT_ID"/>
+                <Cell col="3" text="HIRE_DATE"/>
+                <Cell col="4" text="GENDER"/>
+                <Cell col="5" text="MARRIED"/>
+                <Cell col="6" text="SALARY"/>
+                <Cell col="7" text="EMPL_MEMO"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:EMPL_ID"/>
+                <Cell col="1" text="bind:FULL_NAME"/>
+                <Cell col="2" text="bind:DEPT_ID"/>
+                <Cell col="3" text="bind:HIRE_DATE"/>
+                <Cell col="4" text="bind:GENDER"/>
+                <Cell col="5" text="bind:MARRIED"/>
+                <Cell col="6" text="bind:SALARY"/>
+                <Cell col="7" text="bind:EMPL_MEMO"/>
+              </Band>
+            </Format>
+            <Format id="format1">
+              <Columns>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="200"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="EMPL_ID"/>
+                <Cell col="1" text="DEPT_ID"/>
+                <Cell col="2" text="SALARY"/>
+                <Cell col="3" rowspan="2" text="EMPL_MEMO"/>
+                <Cell row="1" text="FULL_NAME"/>
+                <Cell row="1" col="1" text="HIRE_DATE"/>
+                <Cell row="1" col="2" text="MARRIED"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:EMPL_ID"/>
+                <Cell col="1" text="bind:DEPT_ID"/>
+                <Cell col="2" text="bind:SALARY"/>
+                <Cell col="3" rowspan="2" text="bind:EMPL_MEMO"/>
+                <Cell row="1" text="bind:FULL_NAME"/>
+                <Cell row="1" col="1" text="bind:HIRE_DATE"/>
+                <Cell row="1" col="2" text="bind:MARRIED"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button03" taborder="18" text="default" onclick="Button03_onclick" left="134" top="722" width="100" height="30"/>
+        <Button id="Button04" taborder="19" text="format1" onclick="Button04_onclick" left="30" top="722" width="100" height="30"/>
+        <Static id="Static05" taborder="20" text="5) format" left="28" top="700" width="150" height="20" style="font:bold 9 arial;"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_emp" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="EMPL_ID" type="STRING" size="5"/>
+          <Column id="FULL_NAME" type="STRING" size="10"/>
+          <Column id="DEPT_ID" type="STRING" size="2"/>
+          <Column id="HIRE_DATE" type="DATE" size="8"/>
+          <Column id="GENDER" type="STRING" size="1"/>
+          <Column id="MARRIED" type="STRING" size="1"/>
+          <Column id="SALARY" type="INT" size="10"/>
+          <Column id="EMPL_MEMO" type="STRING" size="500"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="EMPL_ID">AA001</Col>
+            <Col id="FULL_NAME">ShinSoo Choo</Col>
+            <Col id="DEPT_ID">01</Col>
+            <Col id="HIRE_DATE">20011104</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">1</Col>
+            <Col id="SALARY">2000</Col>
+            <Col id="EMPL_MEMO">baseball</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">BB001</Col>
+            <Col id="FULL_NAME">Yuna Kim</Col>
+            <Col id="DEPT_ID">02</Col>
+            <Col id="HIRE_DATE">20050305</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">3000</Col>
+            <Col id="EMPL_MEMO">figure skating</Col>
+          </Row>
+          <Row>
+            <Col id="FULL_NAME">Sumi Jo</Col>
+            <Col id="EMPL_ID">CC001</Col>
+            <Col id="DEPT_ID">03</Col>
+            <Col id="HIRE_DATE">20100506</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">5000</Col>
+            <Col id="EMPL_MEMO">singer</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">DD001</Col>
+            <Col id="FULL_NAME">JS Park</Col>
+            <Col id="DEPT_ID">04</Col>
+            <Col id="HIRE_DATE">20101123</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">3500</Col>
+            <Col id="EMPL_MEMO">soccer</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.Button01_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var arrRow = this.Grid04.getSelectedDatasetRows();
+	var sMsg = "";
+	for(var i=0; i<arrRow.length; i++)
+	{
+		sMsg += "Row : " + arrRow[i] + "\n";
+	}
+
+	this.alert(sMsg);
+}
+
+this.Button02_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var sMsg = "";
+	sMsg =  "Start = " + "Column : " + this.Grid05.selectstartcol 
+	                   + ", Row : " + this.Grid05.selectstartrow;
+	sMsg += "\n";
+	sMsg += "End   = " + "Column : " + this.Grid05.selectendcol 
+	                   + ", Row : " + this.Grid05.selectendrow;
+	alert(sMsg);
+	
+}
+
+this.Button04_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.Grid03.set_formatid("format1");
+}
+
+this.Button03_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.Grid03.set_formatid("default");
+}]]></Script>
+  </Form>
+</FDL>

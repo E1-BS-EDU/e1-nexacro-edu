@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="TOP" classname="TOP" left="0" top="0" width="1024" height="768" titletext="New Form" onload="TOP_onload">
+    <Layouts>
+      <Layout>
+        <ImageViewer id="ImageViewer00" taborder="0" left="4" top="6" width="193" height="88" image="URL('Images::nexacro_platform.png')"/>
+        <Menu id="Menu00" taborder="1" left="204" top="58" width="471" height="27" innerdataset="@ds_top" captioncolumn="m_nm" idcolumn="m_id" levelcolumn="m_lv" onmenuclick="Menu00_onmenuclick"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_top" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false"/>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.TOP_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	application.gds_menu.filter("m_lv == '0'");
+ 	this.ds_top.copyData(application.gds_menu, true);
+ 	application.gds_menu.filter("");
+}
+
+this.Menu00_onmenuclick = function(obj:Menu, e:nexacro.MenuClickEventInfo)
+{
+	application.gds_menu.filter("m_id.substring(0,1)== '"+e.id+"'");
+}
+]]></Script>
+  </Form>
+</FDL>

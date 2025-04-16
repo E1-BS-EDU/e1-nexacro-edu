@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="comp_Grid_Sort" classname="GridSort" left="0" top="0" width="1024" height="768" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Grid id="Grid00" taborder="0" useinputpanel="false" left="30" top="50" width="400" height="368" binddataset="ds_emp" onheadclick="Grid00_onheadclick" oncelldblclick="Grid00_oncelldblclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+                <Col size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row band="body" size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell col="0" disptype="normal" text="EMPL_ID"/>
+                <Cell col="1" disptype="normal" text="FULL_NAME"/>
+                <Cell col="2" disptype="normal" text="DEPT_ID"/>
+                <Cell col="3" disptype="normal" text="HIRE_DATE"/>
+                <Cell col="4" disptype="normal" text="GENDER"/>
+                <Cell col="5" disptype="normal" text="MARRIED"/>
+                <Cell col="6" disptype="normal" text="SALARY"/>
+                <Cell col="7" disptype="normal" text="EMPL_MEMO"/>
+              </Band>
+              <Band id="body">
+                <Cell col="0" disptype="normal" text="bind:EMPL_ID"/>
+                <Cell col="1" disptype="normal" text="bind:FULL_NAME"/>
+                <Cell col="2" disptype="normal" text="bind:DEPT_ID"/>
+                <Cell col="3" disptype="normal" text="bind:HIRE_DATE"/>
+                <Cell col="4" disptype="normal" text="bind:GENDER"/>
+                <Cell col="5" disptype="normal" text="bind:MARRIED"/>
+                <Cell col="6" disptype="normal" text="bind:SALARY"/>
+                <Cell col="7" disptype="normal" text="bind:EMPL_MEMO"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="Static01" taborder="1" text="1) Sort &amp; Popup Detail" left="20" top="20" width="150" height="20" style="font:bold 9 arial;"/>
+        <PopupDiv id="PopupDiv00" left="472" top="116" width="380" height="400" style="background:aliceblue;border:1 solid #808080ff ;" visible="false">
+          <Layouts>
+            <Layout>
+              <Button id="Button02" taborder="8" text="close" onclick="Button_onclick" left="330" top="6" width="42" height="24"/>
+              <Static id="Static00" taborder="9" text="EmplID" left="8" top="9" width="80" height="30" style="border:1 solid #80808099 ;align:center middle;font:9 Dotum bold;"/>
+              <Static id="Static01" taborder="10" text="FullName" left="8" top="49" width="80" height="30" style="border:1 solid #80808099 ;align:center middle;font:9 Dotum bold;"/>
+              <Static id="Static02" taborder="11" text="DeptID" left="8" top="89" width="80" height="30" style="border:1 solid #80808099 ;align:center middle;font:9 Dotum bold;"/>
+              <Static id="Static03" taborder="12" text="HireDate" left="8" top="129" width="80" height="30" style="border:1 solid #80808099 ;align:center middle;font:9 Dotum bold;"/>
+              <Static id="Static04" taborder="13" text="Gender" left="8" top="169" width="80" height="30" style="border:1 solid #80808099 ;align:center middle;font:9 Dotum bold;"/>
+              <Static id="Static05" taborder="14" text="Married" left="8" top="209" width="80" height="30" style="border:1 solid #80808099 ;align:center middle;font:9 Dotum bold;"/>
+              <Static id="Static06" taborder="15" text="Salary" left="8" top="249" width="80" height="30" style="border:1 solid #80808099 ;align:center middle;font:9 Dotum bold;"/>
+              <Static id="Static07" taborder="16" text="Memo" left="8" top="289" width="80" height="30" style="border:1 solid #80808099 ;align:center middle;font:9 Dotum bold;"/>
+              <Edit id="edtFullName" taborder="17" left="95" top="49" width="173" height="30"/>
+              <MaskEdit id="mskEmpID" taborder="18" type="string" mask="AA-###" left="96" top="9" width="173" height="30"/>
+              <Calendar id="calHireDate" taborder="19" dateformat="yyyy-MM-dd" left="96" top="129" width="173" height="30"/>
+              <CheckBox id="chkMarried" taborder="20" left="97" top="209" width="173" height="30"/>
+              <MaskEdit id="mskSalary" taborder="21" mask="#,###" left="95" top="249" width="173" height="30"/>
+              <Radio id="rdoGender" taborder="22" columncount="2" codecolumn="codecolumn" datacolumn="datacolumn" left="96" top="169" width="173" height="30" style="border:1 solid #808080ff ;padding:0 0 0 30;">
+                <Dataset id="innerdataset">
+                  <ColumnInfo>
+                    <Column id="codecolumn" size="256"/>
+                    <Column id="datacolumn" size="256"/>
+                  </ColumnInfo>
+                  <Rows>
+                    <Row>
+                      <Col id="codecolumn">W</Col>
+                      <Col id="datacolumn">Female</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">M</Col>
+                      <Col id="datacolumn">Male</Col>
+                    </Row>
+                  </Rows>
+                </Dataset>
+              </Radio>
+              <Combo id="cmbDeptID" taborder="23" innerdataset="ds_dept" codecolumn="code" datacolumn="text" left="94" top="89" width="173" height="30"/>
+              <TextArea id="txtMemo" taborder="24" left="96" top="289" width="273" height="102"/>
+            </Layout>
+          </Layouts>
+        </PopupDiv>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_sort" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="Column0" type="INT" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Column2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">1</Col>
+            <Col id="Column1">A</Col>
+            <Col id="Column2">1</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">2</Col>
+            <Col id="Column1">B</Col>
+            <Col id="Column2">A</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">3</Col>
+            <Col id="Column1">C</Col>
+            <Col id="Column2">2</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">4</Col>
+            <Col id="Column1">D</Col>
+            <Col id="Column2">B</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">5</Col>
+            <Col id="Column1">E</Col>
+            <Col id="Column2">3</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">6</Col>
+            <Col id="Column1">F</Col>
+            <Col id="Column2">C</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">7</Col>
+            <Col id="Column1">G</Col>
+            <Col id="Column2">4</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">8</Col>
+            <Col id="Column1">H</Col>
+            <Col id="Column2">D</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">9</Col>
+            <Col id="Column1">I</Col>
+            <Col id="Column2">5</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">10</Col>
+            <Col id="Column1">J</Col>
+            <Col id="Column2">E</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_data">
+        <ColumnInfo>
+          <Column id="CORP" type="STRING" size="256"/>
+          <Column id="DEPT" type="STRING" size="256"/>
+          <Column id="NAME" type="STRING" size="256"/>
+          <Column id="HIRE_DATE" type="DATE" size="256"/>
+          <Column id="SALARY" type="INT" size="256"/>
+          <Column id="GENDER" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Sales</Col>
+            <Col id="NAME">Kylie</Col>
+            <Col id="HIRE_DATE">20040521</Col>
+            <Col id="SALARY">1000</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Sales</Col>
+            <Col id="NAME">Vivian</Col>
+            <Col id="HIRE_DATE">20010806</Col>
+            <Col id="SALARY">2000</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Sales</Col>
+            <Col id="NAME">Walter</Col>
+            <Col id="HIRE_DATE">20070628</Col>
+            <Col id="SALARY">3000</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Marketing</Col>
+            <Col id="NAME">Bert</Col>
+            <Col id="HIRE_DATE">20040819</Col>
+            <Col id="SALARY">2000</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Marketing</Col>
+            <Col id="NAME">Kerry</Col>
+            <Col id="HIRE_DATE">20091104</Col>
+            <Col id="SALARY">4000</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Russell</Col>
+            <Col id="HIRE_DATE">20010915</Col>
+            <Col id="SALARY">6000</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Ina</Col>
+            <Col id="HIRE_DATE">20101105</Col>
+            <Col id="SALARY">100</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Bert</Col>
+            <Col id="HIRE_DATE">20030328</Col>
+            <Col id="SALARY">200</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Korea</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Josephine</Col>
+            <Col id="HIRE_DATE">20051126</Col>
+            <Col id="SALARY">300</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Sales</Col>
+            <Col id="NAME">Leo</Col>
+            <Col id="HIRE_DATE">20071127</Col>
+            <Col id="SALARY">200</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Sales</Col>
+            <Col id="NAME">Erica</Col>
+            <Col id="HIRE_DATE">20050319</Col>
+            <Col id="SALARY">400</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Sales</Col>
+            <Col id="NAME">Nicole</Col>
+            <Col id="HIRE_DATE">20120223</Col>
+            <Col id="SALARY">600</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Marketing</Col>
+            <Col id="NAME">Boris</Col>
+            <Col id="HIRE_DATE">20120203</Col>
+            <Col id="SALARY">10</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Marketing</Col>
+            <Col id="NAME">Ali</Col>
+            <Col id="HIRE_DATE">20020803</Col>
+            <Col id="SALARY">20</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Violet</Col>
+            <Col id="HIRE_DATE">20081204</Col>
+            <Col id="SALARY">30</Col>
+            <Col id="GENDER">M</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Indigo</Col>
+            <Col id="HIRE_DATE">20030327</Col>
+            <Col id="SALARY">20</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Oliver</Col>
+            <Col id="HIRE_DATE">20011109</Col>
+            <Col id="SALARY">40</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+          <Row>
+            <Col id="CORP">Japan</Col>
+            <Col id="DEPT">Education</Col>
+            <Col id="NAME">Kane</Col>
+            <Col id="HIRE_DATE">20040415</Col>
+            <Col id="SALARY">60</Col>
+            <Col id="GENDER">W</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_emp" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="EMPL_ID" type="STRING" size="5"/>
+          <Column id="FULL_NAME" type="STRING" size="10"/>
+          <Column id="DEPT_ID" type="STRING" size="2"/>
+          <Column id="HIRE_DATE" type="DATE" size="8"/>
+          <Column id="GENDER" type="STRING" size="1"/>
+          <Column id="MARRIED" type="STRING" size="1"/>
+          <Column id="SALARY" type="INT" size="10"/>
+          <Column id="EMPL_MEMO" type="STRING" size="500"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="EMPL_ID">AA001</Col>
+            <Col id="FULL_NAME">ShinSoo Choo</Col>
+            <Col id="DEPT_ID">01</Col>
+            <Col id="HIRE_DATE">20011104</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">1</Col>
+            <Col id="SALARY">2000</Col>
+            <Col id="EMPL_MEMO">baseball</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">BB001</Col>
+            <Col id="FULL_NAME">Yuna Kim</Col>
+            <Col id="DEPT_ID">02</Col>
+            <Col id="HIRE_DATE">20050305</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">3000</Col>
+            <Col id="EMPL_MEMO">figure skating</Col>
+          </Row>
+          <Row>
+            <Col id="FULL_NAME">Sumi Jo</Col>
+            <Col id="EMPL_ID">CC001</Col>
+            <Col id="DEPT_ID">03</Col>
+            <Col id="HIRE_DATE">20100506</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">5000</Col>
+            <Col id="EMPL_MEMO">singer</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">DD001</Col>
+            <Col id="FULL_NAME">JS Park</Col>
+            <Col id="DEPT_ID">04</Col>
+            <Col id="HIRE_DATE">20101123</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">0</Col>
+            <Col id="SALARY">3500</Col>
+            <Col id="EMPL_MEMO">soccer</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_dept" firefirstcount="0" firenextcount="0" useclientlayout="false" updatecontrol="true" enableevent="true" loadkeymode="keep" loadfiltermode="keep" reversesubsum="false">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="text" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">01</Col>
+            <Col id="text">Sales</Col>
+          </Row>
+          <Row>
+            <Col id="code">02</Col>
+            <Col id="text">IT</Col>
+          </Row>
+          <Row>
+            <Col id="code">03</Col>
+            <Col id="text">Education</Col>
+          </Row>
+          <Row>
+            <Col id="code">04</Col>
+            <Col id="text">Marketing</Col>
+          </Row>
+          <Row>
+            <Col id="code">05</Col>
+            <Col id="text">HR</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="PopupDiv00.edtFullName" propid="value" datasetid="ds_emp" columnid="FULL_NAME"/>
+      <BindItem id="item1" compid="PopupDiv00.mskEmpID" propid="value" datasetid="ds_emp" columnid="EMPL_ID"/>
+      <BindItem id="item2" compid="PopupDiv00.calHireDate" propid="value" datasetid="ds_emp" columnid="HIRE_DATE"/>
+      <BindItem id="item3" compid="PopupDiv00.chkMarried" propid="value" datasetid="ds_emp" columnid="MARRIED"/>
+      <BindItem id="item4" compid="PopupDiv00.mskSalary" propid="value" datasetid="ds_emp" columnid="SALARY"/>
+      <BindItem id="item5" compid="PopupDiv00.rdoGender" propid="value" datasetid="ds_emp" columnid="GENDER"/>
+      <BindItem id="item6" compid="PopupDiv00.cmbDeptID" propid="value" datasetid="ds_emp" columnid="DEPT_ID"/>
+      <BindItem id="item7" compid="PopupDiv00.txtMemo" propid="value" datasetid="ds_emp" columnid="EMPL_MEMO"/>
+    </Bind>
+    <Script type="xscript5.0"><![CDATA[include "Lib::Common.xjs"
+
+this.Grid00_onheadclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	this.cfn_GridSort(obj, e);
+}
+
+this.Grid00_oncelldblclick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	var objRect = this.Grid00.getCellRect(e.row, e.col);
+	var nX = objRect.left;
+	var nY = objRect.bottom;
+
+	this.PopupDiv00.trackPopupByComponent(this.Grid00, nX, nY, 380, 400);
+}
+
+this.Button_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.PopupDiv00.closePopup();
+}]]></Script>
+  </Form>
+</FDL>
