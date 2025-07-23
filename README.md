@@ -1,6 +1,7 @@
 springBoot + NEXACRO 기반
 
-springBoot </br>
+springBoot 2.7.2 </br>
+jdk 17 </br>
 NEXACRO </br>
 oracle
 
